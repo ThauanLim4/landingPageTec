@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteStore</title>
+    <script src="https://kit.fontawesome.com/56d6c8a3a3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="shortcut icon" href="components/imgs/bolt-solid.svg" type="image/x-icon">
+</head>
+
+<body>
+    <header id="header">
+        <div id="divTitle">
+            <h1 id="title"><i class="fa-solid fa-bolt"></i> ByteStore</h1>
+        </div>
+
+        <ul id="headerList">
+            <li><a class="headerListItem inView" href="#">Home</a></li>
+            <li><a class="headerListItem" href="#categorias">Categorias</a></li>
+            <li><a class="headerListItem" href="#recommendedProducts">Produtos</a></li>
+            <li><a class="headerListItem" href="#">Sobre</a></li>
+        </ul>
+
+
+        <i class="menuButton fa-solid fa-bars"></i>
+    </header>
+    <main id="content">
+
+        <div id="menu">
+            <li><a class="headerListItem" href="#">Home</a></li>
+            <li><a class="headerListItem" href="#">Categorias</a></li>
+            <li><a class="headerListItem" href="#">Produtos</a></li>
+            <li><a class="headerListItem" href="#">Sobre</a></li>
+        </div>
+
+        <section id="home">
+
+            <div id="cta">
+                <h1 id="titleCta">Dê uma <span>turbinada</span> no seu setup</h1>
+
+                <!-- <p id="descriptionCta">Trazemos as melhores opções para você melhorar seu setup sem muitas dores de cabeça!</p> -->
+
+                <p id="descriptionCta">Buscamos trazer as opções que mais combina com o seu gosto e atenda sua
+                    necessidades de forma prática e rápida!</p>
+
+                <div id="infoCta">
+                    <a href="#recommendedProducts">Vizualizar Produtos <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div id="socialMediaCta">
+                    <a href="#"><i class="socialMediaCtaIcon fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="socialMediaCtaIcon fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="socialMediaCtaIcon fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="shape">
+                <img id="imgCta" src="components/imgs/pngwing.com(3).png" alt="">
+            </div>
+        </section>
+
+        <section id="categorias">
+            
+            <h2 id="titleCategoria">Encontre produtos por <span>categoria</span>:</h2>
+            <p id="descriptionCategoria">encontre os produtos que você deseja navegando pelas categorias!</p>
+
+            <div id="itensCategoria">
+                <div class="itemCategoria">
+                    <img class="imgItemCategoria" src="components/imgs/placaDeVideo.jpeg" alt="">
+<<<<<<< HEAD
+                    <a href="#">
+=======
+                    <a href="pages/pagesProducts/PlacasDvid.html">
+>>>>>>> parent of 1a49e78 (att 3)
+                        <h3 class="titleItemCategoria">Placas de Vídeo</h3>
+                    </a>
+                </div>
+
+                <div class="itemCategoria">
+                    <img class="imgItemCategoria" src="components/imgs/processador.jpg" alt="">
+                    <a href="pages/pagesProducts/CPUs.html">
+                        <h3 class="titleItemCategoria">Processadores</h3>
+                    </a>
+                </div>
+
+                <div class="itemCategoria">
+                    <img class="imgItemCategoria" src="components/imgs/placaMae.jpg" alt="">
+                    <a href="pages/pagesProducts/MBoard.html">
+                        <h3 class="titleItemCategoria">Placa Mãe</h3>
+                    </a>
+                </div>
+
+                <div class="itemCategoria">
+                    <img class="imgItemCategoria" src="components/imgs/armazenamento.jpg" alt="">
+                    <a href="pages/pagesProducts/armaz.html">
+                        <h3 class="titleItemCategoria">Armazenamento</h3>
+                    </a>
+                </div>
+
+                <div class="itemCategoria">
+                    <img class="imgItemCategoria" src="components/imgs/gabinete.jpg" alt="">
+                    <a href="pages/pagesProducts/gabinet.html">
+                        <h3 class="titleItemCategoria">Gabinetes</h3>
+                    </a>
+                </div>
+
+                <div class="itemCategoria">
+                    <img class="imgItemCategoria" src="components/imgs/fonte.jpg" alt="">
+                    <a href="pages/pagesProducts/fontes.html">
+                        <h3 class="titleItemCategoria">Fontes</h3>
+                    </a>
+                </div>
+
+                <div class="itemCategoria">
+                    <img class="imgItemCategoria" src="components/imgs/monitor.png" alt="">
+                    <a href="pages/pagesProducts/monitores.html">
+                        <h3 class="titleItemCategoria">Monitores</h3>
+                    </a>
+                </div>
+
+                <div class="itemCategoria">
+                    <img class="imgItemCategoria" src="components/imgs/sound.jpg" alt="">
+                    <a href="pages/pagesProducts/som.html">
+                        <h3 class="titleItemCategoria">Som</h3>
+                    </a>
+                </div>
+
+                <div class="itemCategoria">
+                    <img class="imgItemCategoria" src="components/imgs/perifericos.jpg" alt="">
+                    <a href="pages/pagesProducts/perifericos.html">
+                        <h3 class="titleItemCategoria">Perífericos</h3>
+                    </a>
+                </div>
+
+                <div class="divButtonMoreCategoriesMobile">
+                    <a href="pages/categories.html">
+                        <button class="buttonDiscoverMore">
+                            Explorar Categorias <i class="fa-solid fa-arrow-right"></i></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="divButtonMoreCategories">
+                <a href="pages/categories.html">
+                    <button class="buttonDiscoverMore">
+                        Explorar Categorias <i class="fa-solid fa-arrow-right"></i></button>
+                </a>
+            </div>
+
+        </section>
+
+        <section id="recommendedProducts">
+            <h2 id="titleRecomenProducts">Algumas <span>recomendações</span>:</h2>
+            <p id="descriptionRecomenProducts">Veja algumas das nossas recomendações para você!</p>
+
+            <div id="itensProducts">
+                <div class="itemProduct">
+                    <button class="favoriteProduct">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <a href="https://amzn.to/3xdus2Q">
+                        <img src="components/imgProducts/product1.png" alt="" class="imgProduct">
+                        <h3 class="titleProduct">Placa de Video Mancer RX 5500 XT Streaky, 8GB, GDDR6, 128-bit</h3>
+                    </a>
+                </div>
+
+                <div class="itemProduct">
+                    <button class="favoriteProduct">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <a href="https://amzn.to/43vak8D">
+                        <img src="components/imgProducts/product2.png" alt="" class="imgProduct">
+                        <h3 class="titleProduct">Processador AMD Ryzen 5 5500t</h3>
+                    </a>
+                </div>
+
+                <div class="itemProduct">
+                    <button class="favoriteProduct">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <a href="https://amzn.to/4a24FJK">
+                        <img src="components/imgProducts/product3.png" alt="" class="imgProduct">
+                        <h3 class="titleProduct">Motherboard Placa Mãe B550M AORUS Elite | Chipset B550, AMD AM4, mATX,
+                            DDR4 </h3>
+                    </a>
+                </div>
+
+                <div class="itemProduct">
+                    <button class="favoriteProduct">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <a href="https://amzn.to/3TrWOhh">
+                        <img src="components/imgProducts/product4.png" alt="" class="imgProduct">
+                        <h3 class="titleProduct">Memória de 8GB DIMM DDR4 3200Mhz FURY Beast RGB</h3>
+                    </a>
+                </div>
+
+                <div class="itemProduct">
+                    <button class="favoriteProduct">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <a href="https://amzn.to/3PyfyKO">
+                        <img src="components/imgProducts/product5.png" alt="" class="imgProduct">
+                        <h3 class="titleProduct">Samsung T350 - Monitor Gamer, 24", FHD, 75Hz, HDMI, VGA, Freesync,
+                            Preto </h3>
+                    </a>
+                </div>
+
+                <div class="itemProduct">
+                    <button class="favoriteProduct">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <a href="https://amzn.to/3vlJ4wK">
+                        <img src="components/imgProducts/product6.png" alt="" class="imgProduct">
+                        <h3 class="titleProduct">Redragon TECLADO MECANICO GAMER FIZZ RGB PRETO SWITCH MARROM </h3>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <img src="components/imgs/wave.svg" alt="">
+
+        <div id="footer_items">
+            <span id="copyright">Criado Por Thauan Lima</span>
+            <div id="socialMediaCta">
+                <a href="#">
+                    <i class="socialMediaCtaIcon fa-brands fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="socialMediaCtaIcon fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="#">
+                    <i class="socialMediaCtaIcon fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="backend/index.js"></script>
+</body>
+
+</html>
