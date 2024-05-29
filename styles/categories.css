@@ -1,9 +1,13 @@
 @import url('style.css');
 
+.model{
+    display: none;
+}
+
 #allCategories {
     text-align: center;
 }
-#itensCategoriaAll {
+.itensCategoriaAll {
     text-align: center;
     display: grid;
     width: 100%;
