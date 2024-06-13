@@ -1,6 +1,7 @@
 $green1 : #4CCD99;
 $green2: #007F73;
 $green3: #15F5BA;
+$red1: #FF0000;
 $black1: #000000;
 $black4: #0c0c0c;
 $black2: #222831;
@@ -232,6 +233,21 @@ body {
 
 .descriptionProductFW{}
 
+@keyframes shadowWhite {
+    0% {
+        box-shadow: 0px 0px 1px $white1;
+    }
+
+
+    50% {
+        box-shadow: 0px 0px 15px $green1;
+    }
+
+    100% {
+        box-shadow: 0px 0px 1px $white1;
+    }
+}
+
 .buyProductFW{
     @extend %btn-default;
     width: 100%;
@@ -240,22 +256,61 @@ body {
     &:hover{
         color: $green2;
         background-color: $white1;
+        animation-name: shadowWhite;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
     }
 }
 
-.characteristicsProductFW{
+.areaInfomationsFw{
+    min-height: 100vh;
 
     h3 {
         font-size: 45px;
         padding: $gap15 auto;
+        margin: $gap15 auto
     }
 }
 
-.areaButtonsFW{}
+.characteristicsProductFW{
+    display: flex;
+    flex-direction: column;
+    gap: $gap15;
 
-.addToCart{}
 
-.closeWindow{}
+    li {
+
+    }
+}
+
+.areaButtonsFW{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: $gap15;
+    gap: $gap15;
+    width: 300px;
+}
+
+.addToCart{
+    width: fit-content;
+    @extend %btn-default;
+
+    &:hover {
+        background-color: $white1;
+        color: $green2;
+    }
+}
+
+.closeWindow{
+    
+    @extend %btn-default;
+
+    &:hover {
+        background-color: $red1;
+        color: $white1;
+    }
+}
 
 // <--------------------------------------------->
 
