@@ -1,8 +1,11 @@
-const sectionItens = document.getElementById('sectionItens')
-const categories = document.querySelector('.categories')
-const productsOfCategory = document.querySelector('.productsOfCategory')
-const sectionProductsOfCategory = document.querySelector('.sectionProductsOfCategory')
 const home = document.getElementById('home')
+const categories = document.getElementById('categories')
+const sectionItens = document.getElementById('sectionItens')
+const sectionProductsOfCategory = document.querySelector('#sectionProductsOfCategory')
+const productsOfCategory = document.querySelector('.productsOfCategory')
+const allProducts = document.getElementById('sectionAllProducts')
+const areaProducts = document.querySelector('.areaProducts')
+
 const recommendedProducts = document.getElementById('recommendedProducts')
 const footer = document.getElementById('footer')
 
@@ -10,40 +13,23 @@ let itensOfCategory = document.querySelector('.itensOfCategory')
 let linkItemCategoria = document.querySelectorAll('.linkItemCategoria')
 let backToCategories = document.querySelector('.backToCategories')
 let headerListItem = document.querySelectorAll('.headerListItem')
-let headerList = document.querySelector('#headerList')
+let headerList = document.querySelector('.headerList')
 
 
-let observer = new IntersectionObserver((entries, observer) =>{
-    entries.forEach(entry =>{
-        if(entry.isIntersecting){
-            console.log('o elemento '+entries+' está na tela')
-        }
-    })
-}, {threshold: 0.1})
+let observer = new IntersectionObserver((entries, observer) => {
+    if (entries.some(entry => entry.isIntersecting)) {
+        let element = entries[0].target.id
+        headerList.querySelector(`.${element}`).classList.add('inView')
+    } else {
+        console.log('o elemento não está visivel')
+        removeInView()
+    }
+}, { threshold: 0.5,})
 
-headerListItem.forEach((item, index) =>{
-    item.addEventListener('',(i) =>{
-        if(home){
-            observer.observe(home)
-            console.log(i)
-        } 
-        if (categories){
-            observer.observe(categories)        
-        } 
-        if (recommendedProducts){
-            observer.observe(recommendedProducts)
-            
-        } 
-        if (footer) {
-            observer.observe(footer)
-        }
-    
-    })
-    
-    removeInView()
-})
-
-
+observer.observe(home)
+observer.observe(categories)
+observer.observe(recommendedProducts)
+observer.observe(footer)
 
 
 linkItemCategoria.forEach((item, index) => {
@@ -145,10 +131,36 @@ function returnToCategories() {
     }, 1000)
 }
 
-function removeInView(){
-    headerListItem.forEach(i =>{
+function removeInView() {
+    headerListItem.forEach(i => {
         i.classList.remove('inView')
     })
 }
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+let allProductsList = []
+hardwares.forEach(products => {
+    allProductsList = allProductsList.concat(products)
+})
+
+console.log(allProductsList)
+
+shuffle(allProductsList)
+
+allProductsList.map((product, index) => {
+    let itemProduct = document.querySelector('.model .itemProductAll').cloneNode(true)
+
+    itemProduct.setAttribute('data-index', index)
+    itemProduct.querySelector('.imgCategory').setAttribute('src', `${product.img}`)
+    itemProduct.querySelector('.titleCategory').innerHTML = product.name
+    itemProduct.querySelector('.priceCategory').innerHTML = `R$ ${product.price.toFixed(2)}`
+
+    areaProducts.append(itemProduct)
+})
 

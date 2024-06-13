@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ByteStore</title>
+    <link rel="stylesheet" href="/components/styles/styles.css">
     <script src="https://kit.fontawesome.com/56d6c8a3a3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
 
-    <div class="model">
+    <div class="model" style="display: none;">
 
         <div class="itemProductCategory">
             <img class="imgCategory" src="" alt="">
@@ -24,6 +24,19 @@
             </a>
         </div>
 
+        <div class="itemProductAll">
+            <img class="imgCategory" src="" alt="">
+            <a href="#">
+                <h3 class="titleCategory"></h3>
+            </a>
+            <h4 class="priceCategory"></h4>
+            <a href="#" class="btnViewProduct">
+                Vizualizar</i>
+            </a>
+        </div>
+
+
+
     </div>
 
     <header id="header">
@@ -31,26 +44,89 @@
             <h1 id="title"><i class="fa-solid fa-bolt"></i> ByteStore</h1>
         </div>
 
-        <ul id="headerList">
-            <li><a class="headerListItem home inView"  data-index="0" href="#">Home</a></li>
-            <li><a class="headerListItem categorias"  data-index="1" href="#categorias">Categorias</a></li>
-            <li><a class="headerListItem produtos"  data-index="2" href="#recommendedProducts">Produtos</a></li>
-            <li><a class="headerListItem sobre"  data-index="3" href="#">Sobre</a></li>
+        <i class="menuHamburguer fa-solid fa-bars"></i>
+
+        <ul class="headerList">
+            <li><a class="headerListItem home" data-index="0" href="#home">Home</a></li>
+            <li><a class="headerListItem categories" data-index="1" href="#categories">Categorias</a></li>
+            <li><a class="headerListItem recommendedProducts" data-index="2" href="#recommendedProducts">Produtos</a>
+            </li>
+            <li><a class="headerListItem footer" data-index="3" href="#footer">Sobre</a></li>
         </ul>
 
+        <div class="menuMobile">
+            <div class="cabecalhoMenu">
+                <h2 class="titleMenuMobile">Menu</h2>
+                <i class="closeMenu fa-solid fa-xmark"></i>
+            </div>
+            <ul class="headerListMobile">
+                <li><a class="headerListItem home" data-index="0" href="#home">Home</a></li>
+                <li><a class="headerListItem categories" data-index="1" href="#categories">Categorias</a></li>
+                <li><a class="headerListItem recommendedProducts" data-index="2"
+                        href="#recommendedProducts">Produtos</a></li>
+                <li><a class="headerListItem footer" data-index="3" href="#footer">Sobre</a></li>
+            </ul>
 
-        <i class="menuButton fa-solid fa-bars"></i>
+        </div>
     </header>
     <main id="content">
-<!-- 
-        <div id="menu">
-            <li><a class="headerListItem" href="#">Home</a></li>
-            <li><a class="headerListItem" href="#">Categorias</a></li>
-            <li><a class="headerListItem" href="#">Produtos</a></li>
-            <li><a class="headerListItem" href="#">Sobre</a></li>
-        </div> -->
 
-        <section id="home">
+        <section id="floatWindow">
+            <div class="areaProductFW">
+
+                <div class="divImg">
+                    <img class="imgProductFW" src="components/imgProducts/pdv/gtx1650.png">
+                </div>
+
+                <div class="divInfos">
+                    <h2 class="titleProductFW">geforce gtx ventus xs 1650 msi 4gb, clock de 1620 mhz</h2>
+                    <h3 class="priceProductFW">R$ 939,90</h3>
+                    <p class="descriptionProductFW">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+                        ullam velit eaque asperiores, molestiae impedit aliquam, corporis ex a, quisquam deserunt! Quia
+                        molestiae praesentium repudiandae, mollitia quod aliquid dolorem ipsam.</p>
+                    <button class="buyProductFW">Comprar <i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="areaInfomationsFw">
+                <ul class="characteristicsProductFW">
+                    <h3>Principais Catecteristicas</h3>
+
+                    <li>Motor gráfico: AMD Radeon RX 6600</li>
+
+                    <li>Padrão de ônibus: PCI Express 4.0</li>
+
+                    <li>OpenGL: OpenGL 4.6</li>
+
+                    <li>Memória de vídeo: 8GB GDDR6</li>
+
+                    <li>Processadores de fluxo: 1792</li>
+
+                    <li>Velocidade da memória: 14Gbps</li>
+
+                    <li>Interface de memória: 128 bits</li>
+
+                    <li>Resolução: Resolução máxima digital 7680 x 4320</li>
+
+                    <li>Suporte NVlink/Fogo Cruzado: Sim</li>
+
+                    <li>Dimensões: 243 x 134 x 49 mm / 9,6 x 5,3 x 1,9 polegadas</li>
+
+                    <li>Fonte de alimentação recomendada: 500W</li>
+
+                    <li>Conectores de energia: 1x8 pinos</li>
+
+                    <li>Slot: 2.5 Slot</li>
+                </ul>
+            </div>
+
+            <div class="areaButtonsFW">
+                <button class="addToCart">Adicionar ao carrinho</button>
+                <button class="closeWindow">Fechar</button>
+            </div>
+
+        </section>
+
+        <section id="home" class="home">
 
             <div id="cta">
                 <h1 id="titleCta">Dê uma <span>turbinada</span> no seu setup</h1>
@@ -60,25 +136,29 @@
                     necessidades de forma prática e rápida!</p>
 
                 <div id="infoCta">
-                    <a href="#recommendedProducts">Vizualizar Produtos <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#sectionAllProducts" style="scroll-behavior: smooth;">Vizualizar Produtos <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
                 <div id="socialMediaCta">
-                    <a href="#"><i class="socialMediaCtaIcon fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="socialMediaCtaIcon fa-brands fa-whatsapp"></i></a>
-                    <a href="#"><i class="socialMediaCtaIcon fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/thaau_lisouza/"><i
+                            class="socialMediaCtaIcon fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/5583998093699"><i class="socialMediaCtaIcon fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/in/thauan-lima-120bb6311/"><i
+                            class="socialMediaCtaIcon fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
 
             <div class="shape">
-                <img id="imgCta" src="components/imgs/pngwing.com(3).png" alt="">
+                <img class="imgCta" src="components/imgs/pngwing.com(3).png" alt="">
             </div>
+
         </section>
 
-        <section class="categories">
-            
-            <h2 id="titleCategoria">Encontre produtos por <span>categoria</span>:</h2>
-            <p id="descriptionCategoria">encontre os produtos que você deseja navegando pelas categorias!</p>
+        <section id="categories">
+
+            <h2 class="titleCategoria">Encontre produtos por <span>categorias</span>:</h2>
+            <p class="descriptionCategoria">encontre os produtos que você deseja navegando pelas categorias!</p>
 
             <div id="itensCategoria">
                 <div class="itemCategoria">
@@ -143,50 +223,76 @@
                         <h3 class="titleItemCategoria">Perífericos</h3>
                     </a>
                 </div>
-
-                <div class="divButtonMoreCategoriesMobile">
-                    <a href="pages/categories.html">
-                        <button class="buttonDiscoverMore">
-                            Explorar Categorias <i class="fa-solid fa-arrow-right"></i></button>
-                    </a>
-                </div>
-            </div>
-
-            <div class="divButtonMoreCategories">
-                <a href="pages/categories.html">
-                    <button class="buttonDiscoverMore">
-                        Explorar Categorias <i class="fa-solid fa-arrow-right"></i></button>
-                </a>
-            </div>
-
         </section>
 
-        <section class="sectionProductsOfCategory">
-            <h2 id="titleCategoria">Encontre produtos pela categoria <span class="indentifierCategory"></span>:</h2>
-            <p id="descriptionCategoria">encontre os produtos que você deseja navegando pelas categorias!</p>
+        <section id="sectionProductsOfCategory">
+            <h2 class="titleCategoria">Encontre produtos pela categoria <span class="indentifierCategory"></span>:</h2>
+            <p class="descriptionCategoria">encontre os produtos que você deseja navegando pelas categorias!</p>
 
             <div class="productsOfCategory">
 
             </div>
 
-            <button class="backToCategories buttonDefault"><i class="fa-solid fa-arrow-right fa-flip-horizontal"></i> voltar as categorias</button>
+            <button class="backToCategories buttonDefault"><i class="fa-solid fa-arrow-right fa-flip-horizontal"></i>
+                voltar as categorias</button>
+        </section>
+
+        <section id="sectionAllProducts">
+            <h2 class="title">Confira nossos produtos:</h2>
+
+            <div class="areaProducts">
+
+            </div>
+
         </section>
 
         <section id="recommendedProducts">
             <h2 id="titleRecomenProducts">Algumas <span>recomendações</span>:</h2>
             <p id="descriptionRecomenProducts">Veja algumas das nossas recomendações para você!</p>
 
-            <div id="itensProducts">
+            <div class="itensProducts">
                 <div class="itemProduct">
                     <button class="favoriteProduct">
                         <i class="fa-regular fa-heart"></i>
                     </button>
-                    <a href="https://amzn.to/3xdus2Q">
-                        <img src="components/imgProducts/product1.png" alt="" class="imgProduct">
-                        <h3 class="titleProduct">Placa de Video Mancer RX 5500 XT Streaky, 8GB, GDDR6, 128-bit</h3>
+                    <a>
+                        <img src="components/imgProducts/armaz/nvme-500gb.png" alt="" class="imgProduct">
+                        <h3 class="titleProduct">ssd nvme 500gb com leitura de 2483902 hrz</h3>
+                    </a>
+                </div>
+
+                <div class="itemProduct">
+                    <button class="favoriteProduct">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <a>
+                        <img src="components/imgProducts/armaz/nvme-500gb.png" alt="" class="imgProduct">
+                        <h3 class="titleProduct">ssd nvme 500gb com leitura de 2483902 hrz</h3>
+                    </a>
+                </div>
+
+                <div class="itemProduct">
+                    <button class="favoriteProduct">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <a>
+                        <img src="components/imgProducts/armaz/nvme-500gb.png" alt="" class="imgProduct">
+                        <h3 class="titleProduct">ssd nvme 500gb com leitura de 2483902 hrz</h3>
+                    </a>
+                </div>
+
+                <div class="itemProduct">
+                    <button class="favoriteProduct">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <a>
+                        <img src="components/imgProducts/armaz/nvme-500gb.png" alt="" class="imgProduct">
+                        <h3 class="titleProduct">ssd nvme 500gb com leitura de 2483902 hrz</h3>
                     </a>
                 </div>
             </div>
+
+
         </section>
     </main>
 
@@ -210,6 +316,7 @@
     </footer>
     <script src="./scripts/products.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="scripts/functions.js"></script>
 </body>
 
 </html>
