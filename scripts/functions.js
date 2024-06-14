@@ -31,6 +31,8 @@ function closeMenuMobile() {
 
 function closeWindowFloat() {
     const floatWindow = document.getElementById('floatWindow')
+    document.body.style.overflowY = 'auto'
+
     floatWindow.style.opacity = '0'
     setTimeout(() => {
         floatWindow.style.display = 'none'
@@ -49,6 +51,7 @@ function openFloatWindow() {
         item.addEventListener('click', (i) => {
             i.preventDefault()
             floatWindow.style.display = 'block'
+            document.body.style.overflowY = 'hidden'
             setTimeout(() => {
                 floatWindow.style.opacity = '1'
             }, 500)
@@ -58,8 +61,8 @@ function openFloatWindow() {
             console.log(div)
 
             imgProductFW.src = div.childNodes[1].src
-            titleProductFW.innerHTML = div.childNodes[3].innerHTML
-            priceProductFW.innerHTML = div.childNodes[5].innerHTML
+            titleProductFW.innerHTML = div.childNodes[3].innerText
+            priceProductFW.innerHTML = div.childNodes[5].innerText
             characteristicsProductFW.innerHTML = div.childNodes[7].innerHTML
         })
 

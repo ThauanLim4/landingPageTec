@@ -5,7 +5,7 @@ const hardwares = [
             name: 'AISURIX Placa gráfica RX 5500 XT 8gb GDDR6, 128 bits,',
             price: 1183.90,
             img: '../components/imgProducts/pdv/rx5500xt.png',
-            description: `Marca: AISURIX <br>
+            characteristics: `Marca: AISURIX <br>
             Modelo: RX 5500XT 8G <br>
             Interface do hardware: PCI Express x4 <br>
             Memória de vídeo: 8 GB <br>
@@ -23,7 +23,7 @@ const hardwares = [
             name: 'MSI GeForce GTX 1650 128-Bit HDMI/DP/DVI 4GB GDRR6',
             price: 939.00,
             img: '../components/imgProducts/pdv/gtx1650.png',
-            description: `
+            characteristics: `
             Marca: MSI <br>
             Fabricante: MSI <br>
             Série: GTX 1650 D6 Ventus XS OCV3 <br>
@@ -46,7 +46,7 @@ const hardwares = [
             name: 'Placa de Vídeo Gigabyte - GeForce GTX 1660, 6GB GDDR5',
             price: 1772.70,
             img: '../components/imgProducts/pdv/gtx1660.png',
-            description: `
+            characteristics: `
             Tamanho da memória RAM da placa gráfica: 6GB <br>
             Velocidade do clock da GPU: 1830 MHz <br>
             Marca: GIGABYTE <br>

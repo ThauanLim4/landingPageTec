@@ -27,7 +27,7 @@ let observer = new IntersectionObserver((entries, observer) => {
 
 observer.observe(home)
 observer.observe(categories)
-observer.observe(recommendedProducts)
+// observer.observe(recommendedProducts)
 observer.observe(footer)
 
 
@@ -155,7 +155,7 @@ allProductsList.map((product, index) => {
     itemProduct.querySelector('.imgCategory').setAttribute('src', `${product.img}`)
     itemProduct.querySelector('.titleCategory').innerHTML = product.name
     itemProduct.querySelector('.priceCategory').innerHTML = `R$ ${product.price.toFixed(2)}`
-    itemProduct.querySelector('.characteristicsCategory').innerHTML = product.description
+    itemProduct.querySelector('.characteristicsCategory').innerHTML = product.characteristics
 
     areaProducts.append(itemProduct)
     listProducts.push(itemProduct)
