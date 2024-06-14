@@ -1,25 +1,65 @@
-
 const hardwares = [
     [
         {
             id: 1,
-            name: 'Placa de Video Mancer RX 5500 XT Streaky, 8GB, GDDR6, 128-bit, MCR-RX5500XT',
-            price: 1038.90,
-            img: '../components/imgProducts/pdv/rx5500xt.png'
+            name: 'AISURIX Placa gráfica RX 5500 XT 8gb GDDR6, 128 bits,',
+            price: 1183.90,
+            img: '../components/imgProducts/pdv/rx5500xt.png',
+            description: `Marca: AISURIX <br>
+            Modelo: RX 5500XT 8G <br>
+            Interface do hardware: PCI Express x4 <br>
+            Memória de vídeo: 8 GB <br>
+            Tipo de memória de vídeo: GDDR6 <br>
+            Interface da placa de vídeo: PCI Express <br>
+            Peças para montagem: placa de vídeo <br>
+            Interface de saída de vídeo: DisplayPort, HDMI <br>
+            Potência em watts: 130 Watt-hours <br>
+            Peso do produto: 939 g <br>
+            Dimensões do produto: 23,93 x 9,5 x 4,04 cm; 939 g  <br>`
         },
 
         {
             id: 2,
             name: 'MSI GeForce GTX 1650 128-Bit HDMI/DP/DVI 4GB GDRR6',
             price: 939.00,
-            img: '../components/imgProducts/pdv/gtx1650.png'
+            img: '../components/imgProducts/pdv/gtx1650.png',
+            description: `
+            Marca: MSI <br>
+            Fabricante: MSI <br>
+            Série: GTX 1650 D6 Ventus XS OCV3 <br>
+            Cor: Preto <br>
+            Altura do produto: 4,41 polegadas <br>
+            Largura do produto: 1,65 polegadas
+            Velocidade do relógio de memória: 12 GH <br>z
+            Modelo de placa de vídeo: NVIDIA GeForce GTX 1650 <br>
+            Marca do chipset de vídeo: NVIDIA <br>
+            Tipo de memória de vídeo: GDDR6 <br>
+            Memória de vídeo: 4 GB
+            Interface da placa de vídeo: PCI-Express x16 <br>
+            Voltagem: 90 <br>
+            Peso do produto: 671 g <br>
+            Dimensões do produto: 17,91 x 4,19 x 11,2 cm; 671 g <br> `
         },
 
         {
             id: 3,
             name: 'Placa de Vídeo Gigabyte - GeForce GTX 1660, 6GB GDDR5',
             price: 1772.70,
-            img: '../components/imgProducts/pdv/gtx1660.png'
+            img: '../components/imgProducts/pdv/gtx1660.png',
+            description: `
+            Tamanho da memória RAM da placa gráfica: 6GB <br>
+            Velocidade do clock da GPU: 1830 MHz <br>
+            Marca: GIGABYTE <br>
+            Cor: Preto <br>
+            Altura do produto: 40 milímetros <br>
+            Largura do produto: 28 centímetros <br>
+            Velocidade do relógio de memória: 1830 MHz <br>
+            Modelo de placa de vídeo: NVIDIA GeForce GTX 1660 <br>
+            Marca do chipset de vídeo: GIGABYTE <br>
+            Tipo de memória de vídeo: GDDR5 <br>
+            Memória de vídeo: 6 <br>
+            Interface da placa de vídeo: PCI Express <br>
+            Potência em watts: 450 watts <br> `
         }
     ],
 
@@ -216,55 +256,3 @@ const hardwares = [
 
 let [placasDeVideo, cpu, placaMae, armazenamento, gabinete, fontes, perifericos, monitores, som] = hardwares
 
-// const placasDeVideo = [
-    
-// ]
-
-// const cpu = [
-
-// ]
-
-// const placaMae = [
-// ]
-
-// const perifericos = [
-// ]
-
-// const armazenamento = [
-// ]
-
-// const gabinete = [
-// ]
-
-// const fontes = [
-
-// ]
-
-// const monitores = [
-// ]
-
-// const som = [
-
-// ]
-
-
-// // {
-// //     id: 1,
-// //     name: '',
-// //     price: ,
-// //     img: '../components/imgProducts/'
-// // },
-
-// // {
-// //     id: 2,
-// //     name: '',
-// //     price: ,
-// //     img: '../components/imgProducts/'
-// // },
-
-// // {
-// //     id: 3,
-// //     name: '',
-// //     price: ,
-// //     img: '../components/imgProducts/'
-// // },

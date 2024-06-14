@@ -21,7 +21,6 @@ let observer = new IntersectionObserver((entries, observer) => {
         let element = entries[0].target.id
         headerList.querySelector(`.${element}`).classList.add('inView')
     } else {
-        console.log('o elemento não está visivel')
         removeInView()
     }
 }, { threshold: 0.5,})
@@ -36,7 +35,6 @@ linkItemCategoria.forEach((item, index) => {
     item.addEventListener('click', (i) => {
         i.preventDefault()
         let valueAtribute = item.getAttribute('data-key')
-        console.log(valueAtribute)
 
         let returnValue = hardwares.filter((element) => element.indexOf(valueAtribute))
         let selectedCategory = hardwares[valueAtribute]
@@ -112,9 +110,6 @@ linkItemCategoria.forEach((item, index) => {
 
 
         })
-
-
-        console.log(returnValue)
     })
 })
 
@@ -149,9 +144,9 @@ hardwares.forEach(products => {
     allProductsList = allProductsList.concat(products)
 })
 
-console.log(allProductsList)
-
 shuffle(allProductsList)
+
+let listProducts = []
 
 allProductsList.map((product, index) => {
     let itemProduct = document.querySelector('.model .itemProductAll').cloneNode(true)
@@ -160,7 +155,10 @@ allProductsList.map((product, index) => {
     itemProduct.querySelector('.imgCategory').setAttribute('src', `${product.img}`)
     itemProduct.querySelector('.titleCategory').innerHTML = product.name
     itemProduct.querySelector('.priceCategory').innerHTML = `R$ ${product.price.toFixed(2)}`
+    itemProduct.querySelector('.characteristicsCategory').innerHTML = product.description
 
     areaProducts.append(itemProduct)
+    listProducts.push(itemProduct)
 })
 
+console.log(listProducts)
