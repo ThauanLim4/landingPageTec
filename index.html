@@ -15,10 +15,12 @@
 
         <div class="itemProductCategory">
             <img class="imgCategory" src="" alt="">
-            <a href="#">
-                <h3 class="titleCategory"></h3>
-            </a>
+            <h3 class="titleCategory"></h3>
             <h4 class="priceCategory"></h4>
+            <p style="display: none;" class="characteristicsCategory">
+
+            </p>
+
             <a href="" class="btnViewProduct">
                 Vizualizar</i>
             </a>
@@ -26,9 +28,7 @@
 
         <div class="itemProductAll">
             <img class="imgCategory" src="" alt="">
-            <a href="#">
-                <h3 class="titleCategory"></h3>
-            </a>
+            <h3 class="titleCategory"></h3>
             <h4 class="priceCategory"></h4>
             <p style="display: none;" class="characteristicsCategory">
 
@@ -38,19 +38,47 @@
             </a>
         </div>
 
+        <div class="areaProductCart">
+            <img class="imgProductCart" src="" alt="">
+            <div class="areaInfosProduct">
+                <h2 class="nameAIP"></h2>
+                <div class="quantityAIP">
+                    <h3 class="priceAIP"></h3>
+
+                    <button class="less">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <span>1</span>
+                    <button class="more">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <button class="removeItemMob">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+                <button class="removeItem">Remover <i class="fa-solid fa-trash"></i></button>
+
+            </div>
+        </div>
+
+
     </div>
 
     <header id="header">
+        <i class="menuCart fa-solid fa-cart-shopping"></i>
+
         <div id="divTitle">
             <h1 id="title"><i class="fa-solid fa-bolt"></i> ByteStore</h1>
         </div>
 
         <i class="menuHamburguer fa-solid fa-bars"></i>
 
+
         <ul class="headerList">
             <li><a class="headerListItem home" data-index="0" href="#home">Home</a></li>
             <li><a class="headerListItem categories" data-index="1" href="#categories">Categorias</a></li>
-            <li><a class="headerListItem recommendedProducts" data-index="2" href="#recommendedProducts">Produtos</a>
+            <li><a class="headerListItem recommendedProducts" data-index="2" href="#sectionAllProducts">Produtos</a>
             </li>
             <li><a class="headerListItem footer" data-index="3" href="#footer">Sobre</a></li>
         </ul>
@@ -63,12 +91,37 @@
             <ul class="headerListMobile">
                 <li><a class="headerListItem home" data-index="0" href="#home">Home</a></li>
                 <li><a class="headerListItem categories" data-index="1" href="#categories">Categorias</a></li>
-                <li><a class="headerListItem recommendedProducts" data-index="2"
-                        href="#recommendedProducts">Produtos</a></li>
+                <li><a class="headerListItem recommendedProducts" data-index="2" href="#sectionAllProducts">Produtos</a>
+                </li>
                 <li><a class="headerListItem footer" data-index="3" href="#footer">Sobre</a></li>
             </ul>
-
         </div>
+
+        <div class="sectionMenuCart">
+
+            <div class="cabecalhoCart">
+                <i class="closeMenu fa-solid fa-xmark"></i>
+                <h2 class="titleCart">Carrinho</h2>
+            </div>
+
+            <div class="areaCartItens">
+                <h2 class="ACItitle">Carrinho vazio...</h2>
+                <p class="ACIdesc">Que tal <span>adicionarmos</span> algo aqui?</p>
+                <a class="seeProducts" href="#sectionAllProducts" onclick="closeCart()">
+                    Vizualizar produtos
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="areaCartProducts">
+
+            </div>
+
+
+
+            <button class="buyProduct">Comprar <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+
     </header>
     <main id="content">
 

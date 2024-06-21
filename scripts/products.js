@@ -66,23 +66,73 @@ const hardwares = [
     [
         {
             id: 1,
+            brand: 'intel',
             name: 'Processador Intel Core I5-12400F 2.5GHZ (Turbo 4.4GHZ) Cache 18MB 6 Núcleos 12 Threads 12ª Ger LGA 1700',
             price: 919.90,
-            img: '../components/imgProducts/cpu/i5-12400f.png'
+            img: '../components/imgProducts/cpu/i5-12400f.png',
+            characteristics: `
+            Marca: Intel <br>
+            Fabricante da CPU: Intel <br>
+            Modelo da CPU: Intel Core i5-12400F <br>
+            Velocidade da CPU: 2,5 GHz <br>
+            Tipo de soquete do processador: LGA 1700 <br>
+            Velocidade do processador: 2,5 GHz <br>
+            Número de processadores: 6 <br>
+            Tecnologia da memória: DDR <br>
+            Tipo de Memória: GDDR4 <br>
+            Velocidade do relógio de memória: 2,5 GHz <br>
+            Entradas para memória: 1 <br>
+            Potência em watts: 65 watts <br>
+            Peso do produto: 300 g <br>
+            Dimensões do produto: 3 x 4 x 1 cm; 300 g <br>
+            `
         },
     
         {
             id: 2,
+            brand: 'amd',
             name: 'Processador AMD Ryzen 5 5600G, 3.9GHz (4.4GHz Max Turbo), AM4, Vídeo Integrado, 6 Núcleos',
             price: 833.25,
-            img: '../components/imgProducts/cpu/r5-5600g.png'
+            img: '../components/imgProducts/cpu/r5-5600g.png',
+            characteristics: `
+            Marca: AMD <br>
+            Fabricante da CPU: AMD <br>
+            Modelo da CPU: Ryzen 5 5600G <br>
+            Velocidade do processador: 3,9 GHz <br>
+            Soquete da CPU:	Socket AM4 <br>
+            Formato: atx <br>
+            Altura do produto: 6 milímetros <br>
+            Largura do produto: 40 milímetros <br>
+            Resolução: 7680 x 4320 <br>
+            Número de núcleos: 6 <br>
+            Tipo de memória de vídeo: GDDR6 <br>
+            Interface da placa de vídeo: PCI Express <br>
+            Etiqueta Nacional de Eficiência Energética (ENCE): 100% <br>
+            Potência em watts: 65 watts <br>
+            Peso do produto: 410 g <br>
+            Dimensões do produto: 4 x 4 x 0,6 cm; 411,07 g <br>
+            `
         },
     
         {
             id: 3,
+            brand: 'amd',
             name: 'PROCESSADOR AMD RYZEN 7 5700X 3.4GHz (TURBO 4.6GHz) AM4, Cerâmica cinza ',
             price: 1129.90,
-            img: '../components/imgProducts/cpu/r7-5700x.png'
+            img: '../components/imgProducts/cpu/r7-5700x.png',
+            characteristics: `
+            Marca: AMD <br>
+            Fabricante da CPU: AMD <br>
+            Modelo da CPU: Ryzen 7 <br>
+            Velocidade da CPU: 3.4 GHz <br>
+            Soquete da CPU: Socket AM4 <br>
+            Tipo de soquete do processador: Socket AM4 <br>
+            Número de núcleos: 8 <br>
+            Tipo de Memória: DIMM <br>
+            Potência em watts: 65 watts <br>
+            Peso do produto: 1 g <br>
+            Dimensões do produto: 4 x 4 x 0,6 cm; 1 g <br>
+            `
         },
     ],
 

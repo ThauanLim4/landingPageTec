@@ -13,7 +13,7 @@ body {
   scroll-behavior: smooth;
 }
 
-.closeWindow, .addToCart, .buyProductFW {
+.closeWindow, .addToCart, .buyProductFW, .buyProduct, .removeItem, .seeProducts {
   color: #e3e3e3;
   background-color: #007F73;
   padding: 10px 15px;
@@ -38,6 +38,11 @@ body {
   box-shadow: 0px 0px 5px #4CCD99;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
 }
 
 #title {
@@ -73,7 +78,203 @@ body {
   display: none;
 }
 
+.menuCart {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #007F73;
+  display: block;
+  color: #e3e3e3;
+  margin: 15px;
+  font-size: 25px;
+  padding: 15px;
+  transition: all 0.3s;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.sectionMenuCart {
+  display: flex;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(-200%);
+  transition: all 0.3s;
+  flex-direction: column;
+  gap: 50px;
+  z-index: 10;
+}
+
+.cabecalhoCart {
+  color: #e3e3e3;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: auto 1fr;
+  border-bottom: 1px solid #222831;
+}
+.cabecalhoCart i {
+  color: #4CCD99;
+  font-size: 30px;
+  display: flex;
+  padding: 15px;
+  transition: all 0.3s;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.cabecalhoCart i:hover {
+  color: #e3e3e3;
+  cursor: pointer;
+}
+.cabecalhoCart .titleCart {
+  font-size: 2.5em;
+  padding: 15px;
+}
+
+.areaCartItens {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: #e3e3e3;
+  text-align: center;
+}
+.areaCartItens .ACItitle {
+  font-size: 2.5em;
+}
+.areaCartItens .ACIdesc span {
+  color: #4CCD99;
+}
+
+.seeProducts {
+  width: 75%;
+  transition: all 0.3s;
+  text-align: center;
+  max-width: 500px;
+}
+.seeProducts a {
+  color: #e3e3e3;
+}
+.seeProducts:hover {
+  background-color: #e3e3e3;
+  color: #007F73;
+}
+
+.areaCartProducts {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  height: 80vh;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+.areaProductCart {
+  width: 95%;
+  height: 150px;
+  max-width: 1000px;
+  padding: 10px;
+  display: grid;
+  box-shadow: 0px 0px 5px #4CCD99;
+  grid-template-columns: auto 1fr;
+  color: #e3e3e3;
+  gap: 15px;
+}
+.areaProductCart img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: flex;
+  align-self: center;
+}
+
+/**/
+.areaInfosProduct {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+} /**/
+.nameAIP {
+  font-size: 20px;
+} /**/
+.quantityAIP {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+} /**/
+.less, .more {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+.lessi, .morei {
+  color: #007F73;
+  font-size: 20px;
+}
+
+/**/
+.priceAIP {
+  color: #4CCD99;
+  font-size: 25px;
+}
+
+.removeItem {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-self: end;
+  align-self: end;
+  gap: 5px;
+}
+.removeItem:hover {
+  background-color: #FF0000;
+}
+
+.buyProduct {
+  width: 100%;
+  max-width: 750px;
+  font-size: 28px;
+  position: fixed;
+  bottom: 15px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+}
+.buyProduct:hover {
+  background-color: #e3e3e3;
+  color: #4CCD99;
+  animation-name: pulseShadowGreen;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.sectionMenuCart.onScreen {
+  transform: translateX(0);
+}
+
 @media screen and (max-width: 900px) {
+  #header {
+    position: relative;
+  }
   .headerList {
     display: none;
   }
@@ -141,6 +342,94 @@ body {
   .menuMobile.onScreen {
     transform: translateX(0);
   }
+  .areaCartItens {
+    display: flex;
+    flex-direction: column;
+    margin-top: 75px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .areaCartItens .seeProducts {
+    margin-top: 30px;
+  }
+  .areaCartProducts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 75px;
+    gap: 10px;
+    align-items: center;
+    height: 75vh;
+    overflow-y: auto;
+    padding: 5px;
+  }
+  .areaCartProducts .areaProductCart {
+    width: 95%;
+    padding: 10px;
+    display: grid;
+    box-shadow: 0px 0px 5px #4CCD99;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    color: #e3e3e3;
+    gap: 15px;
+    max-height: 130px;
+  }
+  .areaCartProducts .areaProductCart img {
+    width: 75px;
+    height: 75px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
+  .areaCartProducts .areaProductCart .areaInfosProduct {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .areaCartProducts .areaProductCart .areaInfosProduct .nameAIP {
+    font-size: 15px;
+  }
+  .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP .less, .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP .more {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP .less i, .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP .more i {
+    color: #007F73;
+    font-size: 20px;
+  }
+  .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP .removeItemMob {
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    margin-left: 15px;
+  }
+  .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP .removeItemMob i {
+    color: #FF0000;
+  }
+  .areaCartProducts .areaProductCart .areaInfosProduct .priceAIP {
+    color: #4CCD99;
+    text-shadow: 0px 0px 5px #4CCD99;
+  }
+  .areaCartProducts .areaProductCart .areaInfosProduct .removeItem {
+    display: none;
+    opacity: 0;
+  }
+  .buyProduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 75%;
+  }
 }
 @keyframes pulseShadowGreen {
   0% {
@@ -172,7 +461,7 @@ body {
 .areaProductFW {
   padding: 30px;
   display: grid;
-  grid-template-columns: 0.6fr 1fr;
+  grid-template-columns: 0.4fr 1fr;
   flex-direction: column;
   gap: 30px;
   background-color: #0c0c0c;
@@ -186,7 +475,10 @@ body {
 }
 
 .imgProductFW {
-  width: 300px;
+  width: 200px;
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .divInfos {
@@ -279,6 +571,10 @@ body {
     justify-content: center;
     align-items: center;
   }
+  .divImg img {
+    width: 200px;
+    height: 200px;
+  }
   .divInfos {
     display: flex;
     flex-direction: column;
@@ -304,6 +600,9 @@ body {
     color: #4CCD99;
     padding: 15px auto;
     margin: 15px auto;
+  }
+  .areaInfomationsFw .removeItem {
+    display: none;
   }
   .characteristicsProductFW {
     padding: 15px;
@@ -338,6 +637,7 @@ body {
   height: 100vh;
   padding: 15px;
   transition: all 0.3s;
+  margin-top: 70px;
 }
 
 #cta {
@@ -714,9 +1014,12 @@ body {
     display: flex;
     width: 100%;
     overflow-x: auto;
-    align-items: start; /* Alinha os itens ao topo */
-    justify-content: start; /* Alinha os itens ao início */
-    padding: 30px; /* Adiciona espaço inferior para o scroll */
+    align-items: start;
+    /* Alinha os itens ao topo */
+    justify-content: start;
+    /* Alinha os itens ao início */
+    padding: 30px;
+    /* Adiciona espaço inferior para o scroll */
   }
   .areaProducts .itemProductAll {
     width: 300px;
@@ -917,6 +1220,10 @@ body {
 .links a {
   color: #4CCD99;
   margin-left: 5px;
+  transition: all 0.3s;
+}
+.links a:hover {
+  color: #e3e3e3;
 }
 .links a:first-child::after {
   content: " | ";
@@ -929,6 +1236,10 @@ body {
 .socialMediaCta a {
   font-size: 25px;
   color: #4CCD99;
+  transition: all 0.3s;
+}
+.socialMediaCta a:hover {
+  color: #e3e3e3;
 }
 
 @media screen and (max-width: 900px) {

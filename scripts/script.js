@@ -27,7 +27,7 @@ let observer = new IntersectionObserver((entries, observer) => {
 
 observer.observe(home)
 observer.observe(categories)
-// observer.observe(recommendedProducts)
+observer.observe(allProducts)
 observer.observe(footer)
 
 
@@ -35,9 +35,9 @@ linkItemCategoria.forEach((item, index) => {
     item.addEventListener('click', (i) => {
         i.preventDefault()
         let valueAtribute = item.getAttribute('data-key')
-
         let returnValue = hardwares.filter((element) => element.indexOf(valueAtribute))
         let selectedCategory = hardwares[valueAtribute]
+        let a = []
 
         categories.classList.add('hidden')
         setTimeout(() => {
@@ -56,6 +56,7 @@ linkItemCategoria.forEach((item, index) => {
             itemProduct.querySelector('.imgCategory').setAttribute('src', `${product.img}`)
             itemProduct.querySelector('.titleCategory').innerHTML = product.name
             itemProduct.querySelector('.priceCategory').innerHTML = `R$ ${product.price.toFixed(2)}`
+            itemProduct.querySelector('.characteristicsCategory').innerHTML = product.characteristics
 
             productsOfCategory.append(itemProduct)
 
@@ -107,9 +108,41 @@ linkItemCategoria.forEach((item, index) => {
             }
 
             backToCategories.addEventListener('click', returnToCategories)
-
-
+            a.push(itemProduct)
         })
+
+        let btnViewProduct = sectionProductsOfCategory.querySelectorAll('.btnViewProduct')
+
+        btnViewProduct.forEach(btnElement =>{
+            const floatWindow = document.getElementById('floatWindow')
+            let itemProductCategory = sectionProductsOfCategory.querySelectorAll('.itemProductCategory')
+            let imgProductFW = document.querySelector('.imgProductFW')
+            let titleProductFW = document.querySelector('.titleProductFW')
+            let priceProductFW = document.querySelector('.priceProductFW')
+            let descriptionProductFW = document.querySelector('.descriptionProductFW')
+            let characteristicsProductFW = document.querySelector('.characteristicsProductFW')
+
+            btnElement.addEventListener('click', btnEle =>{
+                btnEle.preventDefault()
+                let iResult = (btnEle.target.parentElement.getAttribute('data-index'))
+                let div = a[iResult]
+    
+                console.log(div)
+                floatWindow.style.display = 'block'
+                document.body.style.overflowY = 'hidden'
+                setTimeout(() => {
+                    floatWindow.style.opacity = '1'
+                }, 500)
+
+                imgProductFW.src = div.childNodes[1].src
+                titleProductFW.innerHTML = div.childNodes[3].innerText
+                priceProductFW.innerHTML = div.childNodes[5].innerText
+                characteristicsProductFW.innerHTML = div.childNodes[7].innerHTML
+                
+                console.log(a)
+            })
+        })
+
     })
 })
 
@@ -161,4 +194,3 @@ allProductsList.map((product, index) => {
     listProducts.push(itemProduct)
 })
 
-console.log(listProducts)
