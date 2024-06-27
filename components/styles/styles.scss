@@ -131,18 +131,18 @@ body {
     width: 100%;
     height: 75px;
     text-align: center;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: auto 1fr;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     border-bottom: 1px solid $black2;
 
     i {
         color: $green1;
         font-size: 30px;
         display: flex;
-        padding: $gap15;
         transition: all 0.3s;
-        height: fit-content;
+        position: fixed;
+        left: 15px;
 
         &:hover {
             color: $white1;
@@ -153,6 +153,7 @@ body {
     .titleCart {
         font-size: 2.5em;
         padding: $gap15;
+        text-align: center;
     }
 }
 
@@ -227,28 +228,29 @@ body {
     
 }
 
-/**/ .areaInfosProduct {
+.areaInfosProduct {
     display: flex;
     flex-direction: column;
     gap: $gap15;
-} /**/ .nameAIP {
+}
+.nameAIP {
     font-size: 20px;
-} /**/.quantityAIP {
+}
+.quantityAIP {
     display: flex;
     align-items: center;
     gap: $gap15;
-} /**/.less, .more {
+}
+.less, .more {
     background-color: transparent;
     display: flex;
     align-items: center;
     border: none;
     cursor: pointer;
-
-    &i {
-        color: $green2;
-        font-size: 20px;
-    }
-} /**/.priceAIP {
+    color: $green1;
+    font-size: 20px;
+}
+.priceAIP {
     color: $green1;
     font-size: 25px;
 }
@@ -272,7 +274,7 @@ body {
     max-width: 750px;
     font-size: 28px;
     position: fixed;
-    bottom: 15px;
+    bottom: 5vh;
     padding: $gap15;
     display: flex;
     justify-content: center;
@@ -334,7 +336,7 @@ body {
         top: 0;
         right: 0;
         bottom: 0;
-        width: 90vw;
+        width: 100vw;
         height: 100vh;
         transform: translateX(200%);
         transition: all 0.3s;
@@ -347,23 +349,24 @@ body {
             align-items: center;
             justify-content: center;
             margin-bottom: $gap30;
+            border-bottom: 1px solid $black2;
 
             .titleMenuMobile {
                 color: $white1;
                 padding: $gap15 auto;
                 text-align: center;
                 width: 90%;
+                font-size: 25px;
             }
 
             i {
                 color: $green1;
                 font-size: 30px;
                 display: flex;
-                padding: $gap15;
                 justify-self: end;
-                position: absolute;
-                top: 0;
-                right: 0;
+                align-self: center;
+                position: fixed;
+                right: 15px;
             }
         }
 
@@ -392,11 +395,9 @@ body {
     .areaCartItens {
         display: flex;
         flex-direction: column;
-        margin-top: 75px;
         gap: 10px;
         justify-content: center;
         align-items: center;
-        margin: auto;
 
         .seeProducts {
             margin-top: $gap30;
@@ -435,18 +436,19 @@ body {
 
 
             .areaInfosProduct {
-                display: flex;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 0.5fr 0.5fr;
                 flex-direction: column;
-                gap: $gap15;
 
                 .nameAIP {
-                    font-size: 15px;
+                    font-size: 12px;
                 }
 
                 .quantityAIP {
                     display: flex;
                     align-items: center;
-                    gap: $gap15;
+                    justify-content: space-between;
 
                     .less, .more {
                         background-color: transparent;
@@ -459,11 +461,10 @@ body {
                         }        
                     }
 
-                    .removeItemMob {
+                    .removeItem {
                         font-size: 20px;
                         border: none;
                         background-color: transparent;
-                        margin-left: $gap15;
     
                         i {
                             color: $red1;
@@ -475,11 +476,7 @@ body {
                 .priceAIP {
                     color: $green1;
                     text-shadow: $boxShadow;
-                }
-
-                .removeItem {
-                    display: none;
-                    opacity: 0;
+                    font-size: 1.2em;
                 }
 
             }
@@ -494,7 +491,41 @@ body {
         align-items: center;
         align-self: center;
         width: 75%;
-    }    
+    }
+}
+
+.productPurchased{
+    background-color: $black1;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: $white1;
+    z-index: 20;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $gap15;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.sucessPurchased {
+    font-size: 3em;
+    color: $green1;
+}
+
+.descProductsPurchased{
+    font-size: 1em;
+
+    span {
+        color: $green1;
+    }
 }
 
 
@@ -538,10 +569,13 @@ body {
 .areaProductFW {
     padding: $gap30;
     display: grid;
-    grid-template-columns: 0.4fr 1fr;
+    grid-template-columns: 0.2fr 0.8fr;
     flex-direction: column;
     gap: $gap30;
     background-color: $black4;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: $boxShadow;
 }
 
 .areaInfomationsFw {
@@ -549,12 +583,23 @@ body {
     background-color: $black4;
     text-align: center;
     min-height: 40vh;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    box-shadow: $boxShadow;
+}
+
+.divImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .imgProductFW {
     width: 200px;
     height: 200px;
     object-fit: contain;
+    margin: auto;
 }
 
 .divInfos {
@@ -582,6 +627,7 @@ body {
     @extend %btn-default;
     width: 100%;
     font-size: 25px;
+    max-width: 750px;
 
     &:hover {
         color: $green2;
@@ -608,10 +654,12 @@ body {
     gap: $gap15;
     line-height: 30px;
     font-size: 20px;
+    padding: $gap30;
+    margin-bottom: 50px;
 
     &::after {
         content: '';
-        border-bottom: 1px solid $green2;
+        border-bottom: 1px solid $black2;
     }
 }
 
@@ -701,10 +749,6 @@ body {
             color: $green1;
             padding: $gap15 auto;
             margin: $gap15 auto
-        }
-
-        .removeItem {
-            display: none;
         }
     }
 
@@ -1204,7 +1248,7 @@ body {
     }
 
     .imgCategory {
-        height: 150px;
+        height: 100px;
         width: 150px;
         object-fit: contain;
         margin: 0 auto;

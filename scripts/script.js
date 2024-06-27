@@ -16,19 +16,19 @@ let headerListItem = document.querySelectorAll('.headerListItem')
 let headerList = document.querySelector('.headerList')
 
 
-let observer = new IntersectionObserver((entries, observer) => {
-    if (entries.some(entry => entry.isIntersecting)) {
-        let element = entries[0].target.id
-        headerList.querySelector(`.${element}`).classList.add('inView')
-    } else {
-        removeInView()
-    }
-}, { threshold: 0.5,})
+// let observer = new IntersectionObserver((entries, observer) => {
+//     if (entries.some(entry => entry.isIntersecting)) {
+//         let element = entries[0].target.id
+//         headerList.querySelector(`.${element}`).classList.add('inView')
+//     } else {
+//         removeInView()
+//     }
+// }, { threshold: 0.5,})
 
-observer.observe(home)
-observer.observe(categories)
-observer.observe(allProducts)
-observer.observe(footer)
+// observer.observe(home)
+// observer.observe(categories)
+// observer.observe(allProducts)
+// observer.observe(footer)
 
 
 linkItemCategoria.forEach((item, index) => {

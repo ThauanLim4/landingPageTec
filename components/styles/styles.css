@@ -117,19 +117,18 @@ body {
   width: 100%;
   height: 75px;
   text-align: center;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: auto 1fr;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   border-bottom: 1px solid #222831;
 }
 .cabecalhoCart i {
   color: #4CCD99;
   font-size: 30px;
   display: flex;
-  padding: 15px;
   transition: all 0.3s;
-  height: -moz-fit-content;
-  height: fit-content;
+  position: fixed;
+  left: 15px;
 }
 .cabecalhoCart i:hover {
   color: #e3e3e3;
@@ -138,6 +137,7 @@ body {
 .cabecalhoCart .titleCart {
   font-size: 2.5em;
   padding: 15px;
+  text-align: center;
 }
 
 .areaCartItens {
@@ -202,33 +202,32 @@ body {
   align-self: center;
 }
 
-/**/
 .areaInfosProduct {
   display: flex;
   flex-direction: column;
   gap: 15px;
-} /**/
+}
+
 .nameAIP {
   font-size: 20px;
-} /**/
+}
+
 .quantityAIP {
   display: flex;
   align-items: center;
   gap: 15px;
-} /**/
+}
+
 .less, .more {
   background-color: transparent;
   display: flex;
   align-items: center;
   border: none;
   cursor: pointer;
-}
-.lessi, .morei {
-  color: #007F73;
+  color: #4CCD99;
   font-size: 20px;
 }
 
-/**/
 .priceAIP {
   color: #4CCD99;
   font-size: 25px;
@@ -251,7 +250,7 @@ body {
   max-width: 750px;
   font-size: 28px;
   position: fixed;
-  bottom: 15px;
+  bottom: 5vh;
   padding: 15px;
   display: flex;
   justify-content: center;
@@ -300,7 +299,7 @@ body {
     top: 0;
     right: 0;
     bottom: 0;
-    width: 90vw;
+    width: 100vw;
     height: 100vh;
     transform: translateX(200%);
     transition: all 0.3s;
@@ -312,22 +311,23 @@ body {
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+    border-bottom: 1px solid #222831;
   }
   .menuMobile .cabecalhoMenu .titleMenuMobile {
     color: #e3e3e3;
     padding: 15px auto;
     text-align: center;
     width: 90%;
+    font-size: 25px;
   }
   .menuMobile .cabecalhoMenu i {
     color: #4CCD99;
     font-size: 30px;
     display: flex;
-    padding: 15px;
     justify-self: end;
-    position: absolute;
-    top: 0;
-    right: 0;
+    align-self: center;
+    position: fixed;
+    right: 15px;
   }
   .menuMobile .headerListMobile {
     display: flex;
@@ -345,11 +345,9 @@ body {
   .areaCartItens {
     display: flex;
     flex-direction: column;
-    margin-top: 75px;
     gap: 10px;
     justify-content: center;
     align-items: center;
-    margin: auto;
   }
   .areaCartItens .seeProducts {
     margin-top: 30px;
@@ -385,17 +383,18 @@ body {
     justify-content: center;
   }
   .areaCartProducts .areaProductCart .areaInfosProduct {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr;
     flex-direction: column;
-    gap: 15px;
   }
   .areaCartProducts .areaProductCart .areaInfosProduct .nameAIP {
-    font-size: 15px;
+    font-size: 12px;
   }
   .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP {
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: space-between;
   }
   .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP .less, .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP .more {
     background-color: transparent;
@@ -406,22 +405,18 @@ body {
     color: #007F73;
     font-size: 20px;
   }
-  .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP .removeItemMob {
+  .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP .removeItem {
     font-size: 20px;
     border: none;
     background-color: transparent;
-    margin-left: 15px;
   }
-  .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP .removeItemMob i {
+  .areaCartProducts .areaProductCart .areaInfosProduct .quantityAIP .removeItem i {
     color: #FF0000;
   }
   .areaCartProducts .areaProductCart .areaInfosProduct .priceAIP {
     color: #4CCD99;
     text-shadow: 0px 0px 5px #4CCD99;
-  }
-  .areaCartProducts .areaProductCart .areaInfosProduct .removeItem {
-    display: none;
-    opacity: 0;
+    font-size: 1.2em;
   }
   .buyProduct {
     display: flex;
@@ -431,6 +426,39 @@ body {
     width: 75%;
   }
 }
+.productPurchased {
+  background-color: #000000;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #e3e3e3;
+  z-index: 20;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.sucessPurchased {
+  font-size: 3em;
+  color: #4CCD99;
+}
+
+.descProductsPurchased {
+  font-size: 1em;
+}
+.descProductsPurchased span {
+  color: #4CCD99;
+}
+
 @keyframes pulseShadowGreen {
   0% {
     box-shadow: 0px 0px 1px #e3e3e3;
@@ -461,10 +489,13 @@ body {
 .areaProductFW {
   padding: 30px;
   display: grid;
-  grid-template-columns: 0.4fr 1fr;
+  grid-template-columns: 0.2fr 0.8fr;
   flex-direction: column;
   gap: 30px;
   background-color: #0c0c0c;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 5px #4CCD99;
 }
 
 .areaInfomationsFw {
@@ -472,6 +503,16 @@ body {
   background-color: #0c0c0c;
   text-align: center;
   min-height: 40vh;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  box-shadow: 0px 0px 5px #4CCD99;
+}
+
+.divImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .imgProductFW {
@@ -479,6 +520,7 @@ body {
   height: 200px;
   -o-object-fit: contain;
      object-fit: contain;
+  margin: auto;
 }
 
 .divInfos {
@@ -502,6 +544,7 @@ body {
 .buyProductFW {
   width: 100%;
   font-size: 25px;
+  max-width: 750px;
 }
 .buyProductFW:hover {
   color: #007F73;
@@ -526,10 +569,12 @@ body {
   gap: 15px;
   line-height: 30px;
   font-size: 20px;
+  padding: 30px;
+  margin-bottom: 50px;
 }
 .characteristicsProductFW::after {
   content: "";
-  border-bottom: 1px solid #007F73;
+  border-bottom: 1px solid #222831;
 }
 
 .areaButtonsFW {
@@ -600,9 +645,6 @@ body {
     color: #4CCD99;
     padding: 15px auto;
     margin: 15px auto;
-  }
-  .areaInfomationsFw .removeItem {
-    display: none;
   }
   .characteristicsProductFW {
     padding: 15px;
@@ -1031,7 +1073,7 @@ body {
     justify-content: space-between;
   }
   .imgCategory {
-    height: 150px;
+    height: 100px;
     width: 150px;
     -o-object-fit: contain;
        object-fit: contain;
