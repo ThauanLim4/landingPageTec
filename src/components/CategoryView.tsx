@@ -27,7 +27,7 @@ export default function CategoryView({
 
   return (
     <>
-      <h2 className="text-center text-[40px] font-bold text-white1 lg:text-[45px]">
+      <h2 className="text-center text-[26px] font-bold leading-tight text-white1 sm:text-[40px] lg:text-[45px]">
         Encontre produtos pela categoria{" "}
         <span className="text-green1">{titleLower}</span>:
       </h2>

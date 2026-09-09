@@ -102,11 +102,13 @@ function CartRow({
         alt={item.name}
         width={100}
         height={100}
-        className="h-[100px] w-[100px] self-center object-contain"
+        className="h-20 w-20 self-center object-contain sm:h-[100px] sm:w-[100px]"
       />
-      <div className="flex flex-col gap-[15px]">
-        <h3 className="text-[16px] font-bold leading-tight">{item.name}</h3>
-        <div className="flex items-center gap-[15px]">
+      <div className="flex min-w-0 flex-col gap-[15px]">
+        <h3 className="text-[15px] font-bold leading-tight sm:text-[16px]">
+          {item.name}
+        </h3>
+        <div className="flex flex-wrap items-center gap-[15px]">
           <span className="text-[25px] font-bold text-green1">
             {formatPrice(item.price)}
           </span>

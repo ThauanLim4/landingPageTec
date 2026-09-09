@@ -57,7 +57,7 @@ export default function ProductModal({
     >
       <div className="mx-auto my-auto w-full max-w-[1200px] p-[15px] sm:p-[30px]">
         <div
-          className="glow-green flex flex-col gap-[30px] bg-black4 p-[30px]"
+          className="glow-green flex flex-col gap-5 bg-black4 p-4 sm:gap-[30px] sm:p-[30px]"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="grid grid-cols-1 items-center gap-[30px] sm:grid-cols-[0.2fr_0.8fr]">
@@ -67,15 +67,15 @@ export default function ProductModal({
                 alt={product.name}
                 width={300}
                 height={300}
-                className="h-[200px] w-[200px] object-contain"
+                className="h-[180px] w-[180px] object-contain sm:h-[200px] sm:w-[200px]"
               />
             </div>
 
             <div className="flex flex-col justify-between gap-[15px]">
-              <h2 className="w-full text-[20px] font-bold leading-snug text-white1">
+              <h2 className="w-full text-[18px] font-bold leading-snug text-white1 sm:text-[20px]">
                 {product.name}
               </h2>
-              <span className="text-[35px] font-bold text-green1">
+              <span className="text-[28px] font-bold text-green1 sm:text-[35px]">
                 {formatPrice(product.price)}
               </span>
               <button
@@ -89,10 +89,10 @@ export default function ProductModal({
           </div>
 
           <div className="glow-green bg-black4 text-center">
-            <h3 className="my-4 text-[30px] font-bold text-white1 sm:text-[40px]">
+            <h3 className="my-4 text-[24px] font-bold text-white1 sm:text-[40px]">
               Principais Características
             </h3>
-            <ul className="flex flex-col gap-[10px] pb-[30px] text-start text-[16px] leading-[28px] text-white1/90">
+            <ul className="flex flex-col gap-2 pb-[30px] text-start text-[14px] leading-[24px] text-white1/90 sm:gap-[10px] sm:text-[16px] sm:leading-[28px]">
               {characteristics.map((char, i) => (
                 <li key={i} className="px-[15px] sm:px-[30px]">
                   {char}

@@ -10,31 +10,31 @@ export default function ProductCard({
   onSelect: (product: Product) => void;
 }) {
   return (
-    <div className="glow-green flex w-[300px] flex-col justify-between p-[10px] text-center">
-      <div className="flex h-[150px] items-center justify-center">
+    <div className="glow-green group flex h-full w-[90%] flex-col rounded-2xl bg-black3 p-4 text-left transition-transform duration-300 hover:-translate-y-1 sm:w-full">
+      <div className="flex h-40 items-center justify-center overflow-hidden rounded-xl bg-black4">
         <Image
           src={product.img}
           alt={product.name}
-          width={150}
-          height={150}
-          className="mx-auto h-[150px] w-[150px] object-contain"
+          width={160}
+          height={160}
+          className="h-36 w-36 object-contain transition-transform duration-300 group-hover:scale-105"
         />
       </div>
 
-      <h3 className="flex h-[100px] items-center text-[15px] font-semibold text-green1 transition-all duration-300 hover:text-white1">
+      <h3 className="mt-3 line-clamp-2 min-h-[2.5rem] text-sm font-semibold leading-snug text-white1">
         {product.name}
       </h3>
 
-      <span className="block py-1 text-[20px] font-bold text-green1">
+      <span className="mt-2 block text-lg font-extrabold text-green3">
         {formatPrice(product.price)}
       </span>
 
       <button
         type="button"
         onClick={() => onSelect(product)}
-        className="cursor-pointer self-center bg-green2 px-[10px] py-[5px] font-bold text-white1 transition-all duration-300 hover:bg-white1 hover:text-green2"
+        className="mt-auto w-full cursor-pointer rounded-lg bg-green2 px-4 py-2.5 text-sm font-bold text-white1 transition-all duration-300 hover:bg-green3 hover:text-black"
       >
-        Vizualizar
+        Visualizar
       </button>
     </div>
   );

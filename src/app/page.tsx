@@ -45,9 +45,9 @@ export default function HomePage() {
 
       <section
         id="sectionAllProducts"
-        className="mx-auto flex max-w-[1200px] flex-col items-center gap-[30px] py-[75px]"
+        className="mx-auto flex max-w-[1200px] flex-col items-center gap-[30px] py-12 sm:py-[75px]"
       >
-        <h2 className="my-[30px] text-center text-[40px] font-bold text-white1 lg:text-[45px]">
+        <h2 className="my-[30px] text-center text-[26px] font-bold leading-tight text-white1 sm:text-[40px] lg:text-[45px]">
           Confira nossos produtos:
         </h2>
 

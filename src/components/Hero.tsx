@@ -16,11 +16,11 @@ export default function Hero() {
       className="mx-auto mt-[70px] flex w-full max-w-[1200px] flex-col-reverse items-center p-[15px] lg:h-screen lg:flex-row"
     >
       <div id="cta" className="flex w-full flex-col gap-[15px] lg:w-[55%]">
-        <h1 className="text-[50px] font-extrabold leading-none lg:text-[55px]">
+        <h1 className="text-[30px] font-extrabold leading-tight sm:text-[50px] lg:text-[55px] lg:leading-none">
           Dê uma <span className="text-green3">turbinada</span> no seu setup
         </h1>
 
-        <p className="text-[18px] text-white1/90">
+        <p className="text-base text-white1/90 sm:text-[18px]">
           Buscamos trazer as opções que mais combina com o seu gosto e atenda
           sua necessidades de forma prática e rápida!
         </p>
@@ -57,7 +57,7 @@ export default function Hero() {
           width={500}
           height={500}
           priority
-          className="h-[250px] w-[250px] object-contain lg:h-[500px] lg:w-[500px]"
+          className="h-[200px] w-[200px] object-contain sm:h-[260px] sm:w-[260px] lg:h-[500px] lg:w-[500px]"
         />
       </div>
     </section>
