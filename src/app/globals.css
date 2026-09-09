@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+
+  /* paleta do site original (styles.scss) */
+  --color-green1: #4ccd99;
+  --color-green2: #007f73;
+  --color-green3: #15f5ba;
+  --color-red1: #ff0000;
+  --color-black2: #222831;
+  --color-black3: #31363f;
+  --color-black4: #0c0c0c;
+  --color-white1: #e3e3e3;
+
+  /* o layout original muda em 900px */
+  --breakpoint-lg: 900px;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-white1);
+  overflow-x: hidden;
+}
+
+/* brilho verde dos cards/modal, igual ao $boxShadow original */
+.glow-green {
+  box-shadow: 0px 0px 5px var(--color-green1);
+}
+
+.glow-green-strong {
+  box-shadow: 0px 0px 30px 3px var(--color-green2);
+}
+
+::selection {
+  background-color: var(--color-green2);
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #007f73;
+}
