@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/components/CartProvider";
+import { UIProvider } from "@/components/UIProvider";
+import { ProductViewerProvider } from "@/components/ProductViewerProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
@@ -24,14 +26,18 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${interTight.className} antialiased`}>
-        <CartProvider>
-          <Header />
-          {children}
-          <Footer />
-          <CartDrawer />
-          <MenuMobile />
-          <ProductPurchased />
-        </CartProvider>
+        <UIProvider>
+          <CartProvider>
+            <ProductViewerProvider>
+              <Header />
+              {children}
+              <Footer />
+              <CartDrawer />
+              <MenuMobile />
+              <ProductPurchased />
+            </ProductViewerProvider>
+          </CartProvider>
+        </UIProvider>
       </body>
     </html>
   );

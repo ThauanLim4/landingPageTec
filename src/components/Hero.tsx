@@ -2,20 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Icon from "@/components/Icon";
-
-const SOCIALS = [
-  { href: "https://www.instagram.com/thaau_lisouza/", label: "Instagram", icon: "instagram" as const },
-  { href: "https://wa.me/5583998093699", label: "WhatsApp", icon: "whatsapp" as const },
-  { href: "https://www.linkedin.com/in/thauan-lima-120bb6311/", label: "LinkedIn", icon: "linkedin" as const },
-];
+import { SOCIALS } from "@/lib/site-config";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="mx-auto mt-[70px] flex w-full max-w-[1200px] flex-col-reverse items-center p-[15px] lg:h-screen lg:flex-row"
+      className="mx-auto mt-[70px] flex w-full max-w-page flex-col-reverse items-center p-gutter lg:h-screen lg:flex-row"
     >
-      <div id="cta" className="flex w-full flex-col gap-[15px] lg:w-[55%]">
+      <div id="cta" className="flex w-full flex-col gap-gutter lg:w-[55%]">
         <h1 className="text-[30px] font-extrabold leading-tight sm:text-[50px] lg:text-[55px] lg:leading-none">
           Dê uma <span className="text-green3">turbinada</span> no seu setup
         </h1>
@@ -25,16 +20,16 @@ export default function Hero() {
           sua necessidades de forma prática e rápida!
         </p>
 
-        <div className="py-[30px]">
+        <div className="py-section">
           <Link
             href="#sectionAllProducts"
-            className="cursor-pointer bg-green2 px-[15px] py-[10px] font-bold text-white1 transition-all duration-300 hover:bg-white1 hover:text-green1"
+            className="btn bg-green2 px-gutter py-[10px] hover:bg-white1 hover:text-green1"
           >
-            Vizualizar Produtos <Icon name="arrowRight" size={15} className="inline" />
+            Visualizar Produtos <Icon name="arrowRight" size={15} className="inline" />
           </Link>
         </div>
 
-        <div className="flex gap-[15px]">
+        <div className="flex gap-gutter">
           {SOCIALS.map((social) => (
             <a
               key={social.label}
@@ -52,7 +47,7 @@ export default function Hero() {
 
       <div className="glow-green-strong flex items-start justify-end rounded-[100%_5%] bg-green3 lg:w-[45%]">
         <Image
-          src="/imgs/pngwing.com(3).png"
+          src="/imgs/hero-setup.png"
           alt="Setup"
           width={500}
           height={500}

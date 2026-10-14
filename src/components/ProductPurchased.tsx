@@ -22,7 +22,7 @@ export default function ProductPurchased() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 z-[20] flex flex-col items-center justify-center gap-[15px] bg-black p-[15px] text-center text-white1">
+    <div className="fixed inset-0 z-[20] flex flex-col items-center justify-center gap-gutter bg-black p-gutter text-center text-white1">
       <Icon name="check" size={64} className="text-green1" />
       <h2 className="text-[3em] font-bold text-green1">Sucesso!</h2>
       <h3 className="max-w-md text-lg text-white1">

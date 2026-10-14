@@ -6,16 +6,16 @@ export default function Categories() {
   return (
     <section
       id="categories"
-      className="mx-auto flex w-full max-w-[1200px] flex-col items-center p-[15px]"
+      className="mx-auto flex w-full max-w-page flex-col items-center p-gutter"
     >
       <h2 className="text-center text-[26px] font-bold text-white1 sm:text-[40px] lg:text-[45px]">
         Encontre produtos por <span className="text-green1">categorias</span>:
       </h2>
-      <p className="mx-auto my-[30px] text-center text-white1">
+      <p className="mx-auto my-section text-center text-white1">
         encontre os produtos que você deseja navegando pelas categorias!
       </p>
 
-      <div className="mt-[30px] grid w-full grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-[30px]">
+      <div className="mt-section grid w-full grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-section">
         {CATEGORIES.map((category) => (
           <Link
             key={category.key}

@@ -2,17 +2,11 @@
 
 import Link from "next/link";
 import Icon from "@/components/Icon";
-import { useCart } from "@/components/CartProvider";
-
-const NAV_LINKS = [
-  { href: "#home", label: "Home", cls: "home" },
-  { href: "#categories", label: "Categorias", cls: "categories" },
-  { href: "#sectionAllProducts", label: "Produtos", cls: "recommendedProducts" },
-  { href: "#footer", label: "Sobre", cls: "footer" },
-];
+import { useUI } from "@/components/UIProvider";
+import { NAV_LINKS } from "@/lib/site-config";
 
 export default function MenuMobile() {
-  const { menuOpen, closeMenu } = useCart();
+  const { menuOpen, closeMenu } = useUI();
 
   if (!menuOpen) return null;
 
@@ -28,13 +22,13 @@ export default function MenuMobile() {
             type="button"
             onClick={closeMenu}
             aria-label="Fechar menu"
-            className="absolute right-[15px] text-green1 transition hover:text-white1"
+            className="absolute right-gutter text-green1 transition hover:text-white1"
           >
             <Icon name="xmark" size={26} />
           </button>
         </div>
 
-        <ul className="flex list-none flex-col items-center gap-[30px] py-10">
+        <ul className="flex list-none flex-col items-center gap-section py-10">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <Link

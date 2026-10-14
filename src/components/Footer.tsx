@@ -1,15 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/Icon";
-
-const SOCIALS = [
-  { href: "https://www.instagram.com/thaau_lisouza/", label: "Instagram", icon: "instagram" as const },
-  { href: "https://wa.me/5583998093699", label: "WhatsApp", icon: "whatsapp" as const },
-  { href: "https://www.linkedin.com/in/thauan-lima-120bb6311/", label: "LinkedIn", icon: "linkedin" as const },
-  { href: "https://github.com/ThauanLim4", label: "GitHub", icon: "github" as const },
-];
+import { SOCIALS } from "@/lib/site-config";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer id="footer" className="flex min-h-[30vh] flex-col items-center justify-center">
       <Image
@@ -20,8 +16,8 @@ export default function Footer() {
         className="w-full"
       />
 
-      <div className="flex w-full flex-col items-center justify-evenly gap-[30px] p-[30px]">
-        <div className="flex gap-[30px]">
+      <div className="flex w-full flex-col items-center justify-evenly gap-section p-section">
+        <div className="flex gap-section">
           {SOCIALS.map((social) => (
             <a
               key={social.label}
@@ -52,7 +48,7 @@ export default function Footer() {
         </div>
 
         <span className="text-[15px] text-white1">
-          &copy; Thauan Lima 2024
+          &copy; Thauan Lima {year}
         </span>
       </div>
     </footer>

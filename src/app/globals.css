@@ -12,6 +12,12 @@
   --color-black3: #31363f;
   --color-black4: #0c0c0c;
   --color-white1: #e3e3e3;
+  --color-black: #000000;
+
+  /* container e espaçamentos recorrentes (herdados de $gap15/$gap30 do layout original) */
+  --container-page: 1200px;
+  --spacing-gutter: 15px;
+  --spacing-section: 30px;
 
   /* o layout original muda em 900px.
      Todos em px: misturar rem/px faz o Tailwind v4 ordenar errado as media queries
@@ -40,6 +46,14 @@ body {
 
 .glow-green-strong {
   box-shadow: 0px 0px 30px 3px var(--color-green2);
+}
+
+/* base compartilhada dos botões (cursor, peso, cor e transição) */
+@utility btn {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--color-white1);
+  transition: all 0.3s ease;
 }
 
 ::selection {

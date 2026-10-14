@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Hero from "@/components/Hero";
 import Categories from "@/components/Categories";
 import ProductGrid from "@/components/ProductGrid";
-import ProductModal from "@/components/ProductModal";
+import { useProductViewer } from "@/components/ProductViewerProvider";
 import { CATEGORIES, shuffle } from "@/lib/products";
 import type { Product } from "@/lib/products";
 
@@ -14,7 +14,7 @@ interface Selectable {
 }
 
 export default function HomePage() {
-  const [selected, setSelected] = useState<Selectable | null>(null);
+  const { openProduct } = useProductViewer();
 
   const ordered = useMemo<Selectable[]>(
     () =>
@@ -45,9 +45,9 @@ export default function HomePage() {
 
       <section
         id="sectionAllProducts"
-        className="mx-auto flex max-w-[1200px] flex-col items-center gap-[30px] py-12 sm:py-[75px]"
+        className="mx-auto flex max-w-page flex-col items-center gap-section py-12 sm:py-[75px]"
       >
-        <h2 className="my-[30px] text-center text-[26px] font-bold leading-tight text-white1 sm:text-[40px] lg:text-[45px]">
+        <h2 className="my-section text-center text-[26px] font-bold leading-tight text-white1 sm:text-[40px] lg:text-[45px]">
           Confira nossos produtos:
         </h2>
 
@@ -57,19 +57,10 @@ export default function HomePage() {
             const match = allProducts.find(
               (i) => i.product.id === product.id
             );
-            setSelected({
-              product,
-              categoryKey: match?.categoryKey ?? CATEGORIES[0].key,
-            });
+            openProduct(product, match?.categoryKey ?? CATEGORIES[0].key);
           }}
         />
       </section>
-
-      <ProductModal
-        product={selected?.product ?? null}
-        categoryKey={selected?.categoryKey ?? ""}
-        onClose={() => setSelected(null)}
-      />
     </main>
   );
 }

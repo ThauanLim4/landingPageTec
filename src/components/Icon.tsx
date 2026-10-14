@@ -16,6 +16,12 @@ const paths: Record<string, React.ReactNode> = {
     </>
   ),
   bars: <path d="M3 6h18M3 12h18M3 18h18" />,
+  search: (
+    <>
+      <circle cx="11" cy="11" r="8" />
+      <path d="m21 21-4.3-4.3" />
+    </>
+  ),
   xmark: <path d="M6 6l12 12M18 6L6 18" />,
   arrowRight: <path d="M5 12h14M13 5l7 7-7 7" />,
   arrowLeft: <path d="M19 12H5M11 5l-7 7 7 7" />,

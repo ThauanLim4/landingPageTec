@@ -1,0 +1,424 @@
+[
+  {
+    "categoria": "Placas de Vídeo",
+    "produto": "AISURIX Placa gráfica RX 5500 XT 8gb GDDR6, 128 bits,",
+    "dirBusca": "GPU",
+    "termos": [
+      "5500 XT",
+      "RX 5500",
+      "5500XT"
+    ],
+    "match": "MSI Radeon RX 5500 XT MECH OC 8GB GDDR6 Black",
+    "matchId": "6321816b-a8b1-49c9-a595-cffb78dea97d",
+    "novasChars": [
+      "Fabricante do chipset: AMD",
+      "Saídas de vídeo: 1x HDMI 2.0 | 3x DisplayPort 1.4a",
+      "Clock base da GPU: 1647 MHz",
+      "Clock boost da GPU: 1845 MHz",
+      "Clock da memória: 14000 MHz",
+      "TDP: 140 W"
+    ]
+  },
+  {
+    "categoria": "Placas de Vídeo",
+    "produto": "MSI GeForce GTX 1650 128-Bit HDMI/DP/DVI 4GB GDRR6",
+    "dirBusca": "GPU",
+    "termos": [
+      "GTX 1650"
+    ],
+    "match": "MSI GeForce GTX 1650 G6 D6 GAMING X Black 4GB GDDR6 Black",
+    "matchId": "4709fc76-7dd9-4a07-b1b2-ed216cfcc25a",
+    "novasChars": [
+      "Fabricante do chipset: NVIDIA",
+      "Saídas de vídeo: 1x HDMI 2.0 | 2x DisplayPort 1.4a",
+      "Conectores de energia: 1x PCIe 6 pin",
+      "Clock base da GPU: 1410 MHz",
+      "Clock boost da GPU: 1710 MHz",
+      "Clock da memória: 12000 MHz",
+      "TDP: 75 W"
+    ]
+  },
+  {
+    "categoria": "Placas de Vídeo",
+    "produto": "Placa de Vídeo Gigabyte - GeForce GTX 1660, 6GB GDDR5",
+    "dirBusca": "GPU",
+    "termos": [
+      "1660 6GB",
+      "GTX 1660"
+    ],
+    "match": "MSI GAMING X GeForce GTX 1660 6GB GDDR5 Black",
+    "matchId": "1a2aa791-2cda-4be6-99a4-20301742d82d",
+    "novasChars": [
+      "Fabricante do chipset: NVIDIA",
+      "Saídas de vídeo: 1x HDMI 2.0 | 3x DisplayPort 1.4a",
+      "Conectores de energia: 1x PCIe 8 pin",
+      "Clock base da GPU: 1530 MHz",
+      "Clock boost da GPU: 1860 MHz",
+      "Clock da memória: 8000 MHz",
+      "TDP: 130 W"
+    ]
+  },
+  {
+    "categoria": "Processadores",
+    "produto": "Processador Intel Core I5-12400F 2.5GHZ (Turbo 4.4GHZ) Cache 18MB 6 Núcleos 12 Threads 12ª Ger LGA 1700",
+    "dirBusca": "CPU",
+    "termos": [
+      "12400F"
+    ],
+    "match": "Intel Core i5 12400F",
+    "matchId": "19fbd8f2-a226-4b83-9e5d-683db638d337",
+    "novasChars": [
+      "Núcleos: 6",
+      "Threads: 12",
+      "Clock base: 2.5 GHz",
+      "Clock boost: 4.4 GHz",
+      "Cache L2: 7.5 MB",
+      "Cache L3: 18 MB",
+      "TDP: 65 W",
+      "Memórias suportadas: DDR5, DDR4",
+      "Canais de memória: 2",
+      "Litografia: Intel 7",
+      "Embalagem: Boxed"
+    ]
+  },
+  {
+    "categoria": "Processadores",
+    "produto": "Processador AMD Ryzen 5 5600G, 3.9GHz (4.4GHz Max Turbo), AM4, Vídeo Integrado, 6 Núcleos",
+    "dirBusca": "CPU",
+    "termos": [
+      "5600G"
+    ],
+    "match": "AMD Ryzen 5 5600G",
+    "matchId": "7564da71-725e-4a56-9d79-d80377b7a92f",
+    "novasChars": [
+      "Threads: 12",
+      "Clock base: 3.9 GHz",
+      "Clock boost: 4.4 GHz",
+      "Cache L2: 3 MB",
+      "Cache L3: 16 MB",
+      "TDP: 65 W",
+      "Memórias suportadas: DDR4",
+      "Canais de memória: 2",
+      "Vídeo integrado: AMD Radeon Vega 7",
+      "Litografia: TSMC 7nm FinFET",
+      "Embalagem: Boxed"
+    ]
+  },
+  {
+    "categoria": "Processadores",
+    "produto": "PROCESSADOR AMD RYZEN 7 5700X 3.4GHz (TURBO 4.6GHz) AM4, Cerâmica cinza",
+    "dirBusca": "CPU",
+    "termos": [
+      "5700X"
+    ],
+    "match": "AMD Ryzen 7 5700X",
+    "matchId": "e88d12fe-6384-4d97-befc-3a0ec16a9e5b",
+    "novasChars": [
+      "Threads: 16",
+      "Clock base: 3.4 GHz",
+      "Clock boost: 4.6 GHz",
+      "Cache L2: 4 MB",
+      "Cache L3: 32 MB",
+      "TDP: 65 W",
+      "Memórias suportadas: DDR4",
+      "Canais de memória: 2",
+      "Litografia: TSMC 7nm FinFET, 12nm (Globalfoundries)",
+      "Embalagem: Boxed"
+    ]
+  },
+  {
+    "categoria": "Placa Mãe",
+    "produto": "Placa Mãe Gigabyte A520M S2H DDR4, AMD, AM4",
+    "dirBusca": "Motherboard",
+    "termos": [
+      "A520M S2H",
+      "A520M"
+    ],
+    "match": "GIGABYTE ULTRA DURABLE A520M S2H AM4 DDR4 MICRO-ATX",
+    "matchId": "9f5e3b56-01e9-4b30-8ca8-2421dd4497ce",
+    "novasChars": [
+      "Chipset: AMD A520",
+      "Memória máxima: 64 GB",
+      "Slots de memória: 2",
+      "Slots M.2: 1 (PCIe 3.0 x4/x2 & SATA 2242/2260/2280)",
+      "Áudio: Realtek Audio CODEC 7.1",
+      "Portas traseiras: 1 x PS/2 keyboard/mouse port | 1 x D-Sub port | 1 x DVI-D port | 1 x HDMI port | 4 x USB 3.2 Gen 1 ports | 2 x USB 2.0/1.1 ports | 1 x RJ-45 port | 1 x Q-Flash Plus button | 3 x audio jacks"
+    ]
+  },
+  {
+    "categoria": "Placa Mãe",
+    "produto": "Placa Mãe Gigabyte B450M DS3H V2",
+    "dirBusca": "Motherboard",
+    "termos": [
+      "B450M DS3H",
+      "DS3H V2"
+    ],
+    "match": null,
+    "matchId": null,
+    "novasChars": []
+  },
+  {
+    "categoria": "Placa Mãe",
+    "produto": "Placa Mãe Gigabyte B550M AORUS Elite, Chipset B550, AMD AM4, mATX, DDR4",
+    "dirBusca": "Motherboard",
+    "termos": [
+      "B550M AORUS ELITE",
+      "AORUS ELITE"
+    ],
+    "match": "Gigabyte B550M AORUS ELITE (rev.1.3)",
+    "matchId": "53041278-b67f-4b54-a06e-d8a5b637b19f",
+    "novasChars": [
+      "Formato: Micro ATX",
+      "Chipset: AMD B550",
+      "Memória máxima: 128 GB",
+      "Slots de memória: 4",
+      "Slots M.2: 2 (PCIe 4.0 x4/x2 / SATA 2242/2260/2280/22110; PCIe 3.0 x2 / SATA 2242/2260/2280)",
+      "Áudio: Realtek 7.1",
+      "Portas traseiras: 1 x PS/2 keyboard/mouse port | 1 x DVI-D port (Note) | 1 x HDMI port (Note) | 2 x SMA antenna connectors (2T2R) | 4 x USB 3.2 Gen 1 ports | 4 x USB 2.0/1.1 ports | 1 x RJ-45 port | 3 x audio jacks"
+    ]
+  },
+  {
+    "categoria": "Armazenamento",
+    "produto": "HD Seagate BarraCuda, 1TB, 3.5, SATA",
+    "dirBusca": "Storage",
+    "termos": [
+      "BarraCuda 1TB",
+      "BarraCuda Compute 1TB",
+      "7200RPM",
+      "7200"
+    ],
+    "match": "Seagate BarraCuda 1TB 3.5\" HDD 7200RPM SATA Internal",
+    "matchId": "0bf0ed44-eb3c-4676-bfe5-362e0d3ffb14",
+    "novasChars": [
+      "Formato: 3.5\"",
+      "NVMe: Não"
+    ]
+  },
+  {
+    "categoria": "Armazenamento",
+    "produto": "SSD Kingston NV2 500GB NVMe M.2 2280",
+    "dirBusca": "Storage",
+    "termos": [
+      "Kingston NV2",
+      "NV2 500",
+      "NV2"
+    ],
+    "match": "Kingston NV2 500GB M.2-2280 SSD PCIe 4.0 x4 NVMe",
+    "matchId": "d412bbc8-bf3f-4db5-83c2-97fdaf590bf5",
+    "novasChars": [
+      "Formato: M.2-2280"
+    ]
+  },
+  {
+    "categoria": "Armazenamento",
+    "produto": "HD SSD Kingston SA400S37 480GB",
+    "dirBusca": "Storage",
+    "termos": [
+      "SA400S37",
+      "A400 480",
+      "480GB"
+    ],
+    "match": "Kingston A400 480GB SSD 2.5\" SATA",
+    "matchId": "5f20fef5-4dee-423f-83f1-b5faa7a785e1",
+    "novasChars": [
+      "Formato: 2.5\"",
+      "Interface: SATA 6.0 Gb/s",
+      "NVMe: Não"
+    ]
+  },
+  {
+    "categoria": "Gabinetes",
+    "produto": "Gabinete Gamer Pichau HX300M Glass, Mid-tower, Lateral de Vidro, Branco",
+    "dirBusca": "PCCase",
+    "termos": [
+      "HX300M",
+      "HX300"
+    ],
+    "match": null,
+    "matchId": null,
+    "novasChars": []
+  },
+  {
+    "categoria": "Gabinetes",
+    "produto": "GABINETE MICRO ATX SEM FONTE F02 PRETO BRX",
+    "dirBusca": "PCCase",
+    "termos": [
+      "F02"
+    ],
+    "match": null,
+    "matchId": null,
+    "novasChars": []
+  },
+  {
+    "categoria": "Gabinetes",
+    "produto": "Gabinete Redragon Wideload Pro CA-604B-PRO",
+    "dirBusca": "PCCase",
+    "termos": [
+      "Wideload"
+    ],
+    "match": null,
+    "matchId": null,
+    "novasChars": []
+  },
+  {
+    "categoria": "Fontes",
+    "produto": "Corsair FONTE ATX 750W - CV750-80 PLUS BRONZE - COM CABO DE FORÇA",
+    "dirBusca": "PSU",
+    "termos": [
+      "CV750"
+    ],
+    "match": "CV Series™ CV750 — 750 Watt 80 Plus® Bronze Certified PSU",
+    "matchId": "948c51aa-ef59-40be-8fbf-ab48ee3dd0b3",
+    "novasChars": [
+      "Eficiência: 80+ Bronze",
+      "Conectores: 1x ATX 24 pin | 2x EPS 8 pin | 2x PCIe 6+2 pin | 7x SATA | 4x Molex 4 pin | 1x Floppy 4 pin"
+    ]
+  },
+  {
+    "categoria": "Fontes",
+    "produto": "Fonte de Alimentação Redragon 500W 80 Plus Bronze PFC Ativo S/Cabo",
+    "dirBusca": "PSU",
+    "termos": [
+      "RGPS",
+      "Redragon RGPS"
+    ],
+    "match": null,
+    "matchId": null,
+    "novasChars": []
+  },
+  {
+    "categoria": "Fontes",
+    "produto": "FONTE ATX 650W - CV650-80 PLUS BRONZE - COM CABO DE FORCA",
+    "dirBusca": "PSU",
+    "termos": [
+      "CV650"
+    ],
+    "match": "Corsair CV650 Black 650W Non-Modular 80+ Bronze Certified ATX",
+    "matchId": "0e1d710b-c5e2-4ec3-beb8-a65102b7cdc6",
+    "novasChars": [
+      "Modular: Non-Modular"
+    ]
+  },
+  {
+    "categoria": "Monitores",
+    "produto": "Monitor AOC 23,8",
+    "dirBusca": "Monitor",
+    "termos": [
+      "24B1XHM",
+      "24B1X"
+    ],
+    "match": "AOC 24B1XH 23.8\" 1080p 60Hz IPS Monitor",
+    "matchId": "a63f0a9e-1913-46c2-ad33-1179711463b0",
+    "novasChars": [
+      "Taxa de atualização: 60 Hz",
+      "Painel: IPS",
+      "Conectores: 1 x HDMI                                                    1 x VGA",
+      "Brilho: 250 cd/m²",
+      "Ângulo de visão: 178° H x 178° V"
+    ]
+  },
+  {
+    "categoria": "Monitores",
+    "produto": "AOC Hero 27\" - Monitor Gamer, 144Hz IPS 1ms G-Sync Compatible 27G2, Preto",
+    "dirBusca": "Monitor",
+    "termos": [
+      "27G2"
+    ],
+    "match": "AOC 27G2U/BK 27\" 1080p 144Hz IPS Monitor",
+    "matchId": "1c13e335-b1d7-4f7f-87e5-a2582e01bd5d",
+    "novasChars": [
+      "Tamanho da tela: 27 polegadas",
+      "Conectores: 2 x HDMI                                                    1 x DisplayPort",
+      "Adaptive Sync: G-Sync Compatible",
+      "Ângulo de visão: 178° H x 178° V"
+    ]
+  },
+  {
+    "categoria": "Monitores",
+    "produto": "Samsung T350 - Monitor Gamer, 24\", FHD, 75Hz, HDMI, VGA, Freesync, Preto",
+    "dirBusca": "Monitor",
+    "termos": [
+      "T350"
+    ],
+    "match": "Samsung T350 24\" 1080p 75Hz IPS Monitor",
+    "matchId": "091417f3-6a73-4a7c-b868-c1a46ee50327",
+    "novasChars": [
+      "Conectores: 1 x HDMI 1.4                                                    1 x VGA",
+      "Adaptive Sync: FreeSync"
+    ]
+  },
+  {
+    "categoria": "Som",
+    "produto": "Caixa de Som Gamer Redragon Anvil RGB Branco - GS560W",
+    "dirBusca": "Speaker",
+    "termos": [
+      "GS560",
+      "Anvil"
+    ],
+    "match": "Redragon GS560 RGB Desktop Soundbar",
+    "matchId": "5d651c1e-a419-4e7b-90b2-2601dacc02b4",
+    "novasChars": []
+  },
+  {
+    "categoria": "Som",
+    "produto": "CX DE SOM SOUNDBAR GAMER REDRAGON ADIEMUS - GS560",
+    "dirBusca": "Speaker",
+    "termos": [
+      "GS560",
+      "Adiemus"
+    ],
+    "match": "Redragon GS560 RGB Desktop Soundbar",
+    "matchId": "5d651c1e-a419-4e7b-90b2-2601dacc02b4",
+    "novasChars": []
+  },
+  {
+    "categoria": "Som",
+    "produto": "C3Tech Caixa de som SP-301BK Preto - Sistema de audio 2.0 P2 Com Blindagem Eletromagnetica alimentacao via porta USB",
+    "dirBusca": "Speaker",
+    "termos": [
+      "SP-301"
+    ],
+    "match": null,
+    "matchId": null,
+    "novasChars": []
+  },
+  {
+    "categoria": "Periféricos",
+    "produto": "Redragon TECLADO MECANICO GAMER FIZZ RGB PRETO SWITCH MARROM",
+    "dirBusca": "Keyboard",
+    "termos": [
+      "K617",
+      "FIZZ"
+    ],
+    "match": "Redragon K617 Fizz 60% Wired RGB Gaming Keyboard, 61 Keys Hot-Swap Compact Mechanical Keyboard w/ 16.8M RGB Backlight, Red Inner Design, Programmable Linear Red Switch, Pro Software",
+    "matchId": "498476b8-983f-4adc-9f85-aa038f744da8",
+    "novasChars": [
+      "Switch: Programmable Linear Red",
+      "Tipo de switch: Linear",
+      "Tamanho: 60%"
+    ]
+  },
+  {
+    "categoria": "Periféricos",
+    "produto": "Mouse Gamer Logitech G203 LIGHTSYNC RGB, Efeito de Ondas de Cores, 6 Botões Programáveis e Até 8.000 DPI - Preto",
+    "dirBusca": "Mouse",
+    "termos": [
+      "G203"
+    ],
+    "match": "Logitech G203 Lightsync Wired Optical Mouse",
+    "matchId": "091dacc9-3d0f-4f24-bd1a-d6b2d7606fa1",
+    "novasChars": []
+  },
+  {
+    "categoria": "Periféricos",
+    "produto": "Headphone Fone de Ouvido Havit HV-H2002d, Gamer, com Microfone, Falante 53mm, Plug 3.5mm",
+    "dirBusca": "Headphones",
+    "termos": [
+      "H2002",
+      "H2002D"
+    ],
+    "match": null,
+    "matchId": null,
+    "novasChars": []
+  }
+]

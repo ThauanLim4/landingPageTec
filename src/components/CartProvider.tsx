@@ -21,12 +21,9 @@ interface CartContextValue {
   items: CartItem[];
   totalItems: number;
   isOpen: boolean;
-  menuOpen: boolean;
   openCart: () => void;
   closeCart: () => void;
-  openMenu: () => void;
-  closeMenu: () => void;
-  addItem: (product: Product, categoryKey: string) => void;
+  addItem: (product: Product, categoryKey: string, qty?: number) => void;
   removeItem: (uniqueId: string) => void;
   changeQty: (uniqueId: string, delta: number) => void;
   clearCart: () => void;
@@ -45,7 +42,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [ready, setReady] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     try {
@@ -71,30 +67,25 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   }, [items, ready]);
 
-  const openCart = useCallback(() => {
-    setMenuOpen(false);
-    setIsOpen(true);
-  }, []);
+  const openCart = useCallback(() => setIsOpen(true), []);
   const closeCart = useCallback(() => setIsOpen(false), []);
 
-  const openMenu = useCallback(() => {
-    setIsOpen(false);
-    setMenuOpen(true);
-  }, []);
-  const closeMenu = useCallback(() => setMenuOpen(false), []);
-
-  const addItem = useCallback((product: Product, categoryKey: string) => {
-    const uniqueId = makeUniqueId(categoryKey, product.id);
-    setItems((prev) => {
-      const existing = prev.find((i) => i.uniqueId === uniqueId);
-      if (existing) {
-        return prev.map((i) =>
-          i.uniqueId === uniqueId ? { ...i, qty: i.qty + 1 } : i
-        );
-      }
-      return [{ ...product, categoryKey, uniqueId, qty: 1 }, ...prev];
-    });
-  }, []);
+  const addItem = useCallback(
+    (product: Product, categoryKey: string, qty = 1) => {
+      const uniqueId = makeUniqueId(categoryKey, product.id);
+      const amount = Math.max(1, Math.trunc(qty));
+      setItems((prev) => {
+        const existing = prev.find((i) => i.uniqueId === uniqueId);
+        if (existing) {
+          return prev.map((i) =>
+            i.uniqueId === uniqueId ? { ...i, qty: i.qty + amount } : i
+          );
+        }
+        return [{ ...product, categoryKey, uniqueId, qty: amount }, ...prev];
+      });
+    },
+    []
+  );
 
   const removeItem = useCallback((uniqueId: string) => {
     setItems((prev) => prev.filter((i) => i.uniqueId !== uniqueId));
@@ -139,11 +130,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
       items,
       totalItems,
       isOpen,
-      menuOpen,
       openCart,
       closeCart,
-      openMenu,
-      closeMenu,
       addItem,
       removeItem,
       changeQty,
@@ -154,11 +142,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
       items,
       totalItems,
       isOpen,
-      menuOpen,
       openCart,
       closeCart,
-      openMenu,
-      closeMenu,
       addItem,
       removeItem,
       changeQty,

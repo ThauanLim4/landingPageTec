@@ -19,6 +19,11 @@ const ctx = vm.createContext({});
 vm.runInContext(cleaned, ctx);
 const { CATEGORY_META, PRODUCTS } = ctx.__out;
 
+// characteristics agora é string[] (uma linha por característica)
+function charsText(c) {
+  return Array.isArray(c) ? c.join(" ") : String(c ?? "");
+}
+
 function walk(dir, base = "") {
   const out = [];
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
@@ -63,7 +68,7 @@ for (let i = 0; i < CATEGORY_META.length; i++) {
     if (typeof p.price !== "number" || !Number.isFinite(p.price) || p.price <= 0)
       problems.push(`preço inválido (${p.price})`);
 
-    if (!p.characteristics || p.characteristics.trim().length < 30)
+    if (!p.characteristics || charsText(p.characteristics).trim().length < 30)
       problems.push("características vazias/curtas");
 
     const rel = (p.img ?? "").replace(/^\//, "");
@@ -79,7 +84,7 @@ for (let i = 0; i < CATEGORY_META.length; i++) {
       preco: p.price,
       img: p.img,
       imgStatus,
-      charsLen: p.characteristics?.length ?? 0,
+      charsLen: charsText(p.characteristics).length,
       problems,
     });
   }

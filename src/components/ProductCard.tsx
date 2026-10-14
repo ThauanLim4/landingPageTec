@@ -32,7 +32,7 @@ export default function ProductCard({
       <button
         type="button"
         onClick={() => onSelect(product)}
-        className="mt-auto w-full cursor-pointer rounded-lg bg-green2 px-4 py-2.5 text-sm font-bold text-white1 transition-all duration-300 hover:bg-green3 hover:text-black"
+        className="btn mt-auto w-full rounded-lg bg-green2 px-4 py-2.5 text-sm hover:bg-green3 hover:text-black"
       >
         Visualizar
       </button>
