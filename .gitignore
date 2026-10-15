@@ -34,3 +34,5 @@ next-env.d.ts
 
 # cópia do site estático original (HTML/CSS/JS)
 .backup/
+.vercel
+.env*

@@ -54,9 +54,10 @@ export default function HomePage() {
         <ProductGrid
           products={allProducts.map((i) => i.product)}
           onSelect={(product) => {
-            const match = allProducts.find(
-              (i) => i.product.id === product.id
-            );
+            // casa por referência: os ids (1,2,3) se repetem em todas as
+            // categorias, então buscar por product.id retornava outra
+            // categoria e o carrinho acabava mesclando itens diferentes
+            const match = allProducts.find((i) => i.product === product);
             openProduct(product, match?.categoryKey ?? CATEGORIES[0].key);
           }}
         />

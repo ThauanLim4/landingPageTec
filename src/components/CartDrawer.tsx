@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import Icon from "@/components/Icon";
 import { useCart } from "@/components/CartProvider";
 import { formatPrice } from "@/lib/format";
@@ -14,72 +16,101 @@ export default function CartDrawer() {
     closeCart,
     changeQty,
     removeItem,
-    purchase,
   } = useCart();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeCart();
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [isOpen, closeCart]);
+
+  if (!isOpen) return null;
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex flex-col gap-[50px] bg-black transition-transform duration-300 ${
-        isOpen ? "translate-x-0" : "-translate-x-full"
-      }`}
-      aria-hidden={!isOpen}
+      className="fixed inset-0 z-50 flex overflow-y-auto bg-black/80 p-gutter sm:p-section"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Carrinho"
+      onClick={closeCart}
     >
-      <div className="flex h-[75px] w-full items-center justify-center border-b border-black2">
-        <button
-          type="button"
-          onClick={closeCart}
-          aria-label="Fechar carrinho"
-          className="absolute left-gutter text-[30px] text-green1 transition hover:text-white1"
-        >
-          <Icon name="xmark" size={26} />
-        </button>
-        <h2 className="p-gutter text-center text-[28px] font-bold text-white1">
-          Carrinho
-        </h2>
-      </div>
-
-      {items.length === 0 ? (
-        <div className="mt-[100px] flex flex-col items-center gap-gutter text-center text-white1">
-          <h3 className="text-[2.5em] font-bold">Carrinho vazio...</h3>
-          <p className="text-base">
-            Que tal <span className="text-green1">adicionarmos</span> algo aqui?
-          </p>
+      <div
+        className="mx-auto my-auto w-full max-w-[720px]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="glow-green relative overflow-hidden rounded-2xl border border-green1/20 bg-black4">
           <button
             type="button"
             onClick={closeCart}
-            className="btn mt-gutter flex max-w-[500px] w-[75%] items-center justify-center gap-2 bg-green2 px-gutter py-3 text-sm hover:bg-white1 hover:text-green2"
+            aria-label="Fechar carrinho"
+            className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-lg text-white1/70 transition hover:bg-black3 hover:text-white1"
           >
-            Visualizar produtos <Icon name="arrowRight" size={15} />
+            <Icon name="xmark" size={18} />
           </button>
-        </div>
-      ) : (
-        <>
-          <ul className="mt-[100px] flex h-[70vh] w-full flex-col items-center gap-gutter overflow-y-auto p-gutter">
-            {items.map((item) => (
-              <CartRow
-                key={item.uniqueId}
-                item={item}
-                onMinus={() => changeQty(item.uniqueId, -1)}
-                onPlus={() => changeQty(item.uniqueId, 1)}
-                onRemove={() => removeItem(item.uniqueId)}
-              />
-            ))}
-          </ul>
 
-          <div className="flex w-full flex-col items-center gap-3 px-gutter pb-10">
-            <p className="text-sm text-white1/70">
-              {totalItems} {totalItems === 1 ? "item" : "itens"} no carrinho
-            </p>
-            <button
-              type="button"
-              onClick={purchase}
-              className="btn w-full max-w-[750px] bg-green2 px-gutter py-gutter text-center text-[24px] hover:bg-white1 hover:text-green1"
-            >
-              Comprar <Icon name="cart" size={22} className="inline" />
-            </button>
+          <div className="flex flex-col gap-4 p-5 sm:p-6">
+            <h2 className="pr-8 text-[18px] font-semibold text-white1 sm:text-[20px]">
+              Carrinho
+            </h2>
+
+            {items.length === 0 ? (
+              <div className="flex flex-col items-center gap-4 py-8 text-center text-white1">
+                <h3 className="text-[24px] font-bold">Carrinho vazio...</h3>
+                <p className="text-sm">
+                  Que tal{" "}
+                  <span className="text-green1">adicionarmos</span> algo aqui?
+                </p>
+                <button
+                  type="button"
+                  onClick={closeCart}
+                  className="btn mt-2 flex w-full max-w-[320px] items-center justify-center gap-2 rounded-lg bg-green2 px-4 py-3 text-sm hover:bg-white1 hover:text-green2"
+                >
+                  Visualizar produtos <Icon name="arrowRight" size={15} />
+                </button>
+              </div>
+            ) : (
+              <>
+                <ul className="flex max-h-[50vh] flex-col overflow-y-auto">
+                  {items.map((item) => (
+                    <CartRow
+                      key={item.uniqueId}
+                      item={item}
+                      onMinus={() => changeQty(item.uniqueId, -1)}
+                      onPlus={() => changeQty(item.uniqueId, 1)}
+                      onRemove={() => removeItem(item.uniqueId)}
+                    />
+                  ))}
+                </ul>
+
+                <div className="flex flex-col gap-3 border-t border-black2 pt-4">
+                  <p className="text-sm text-white1/70">
+                    {totalItems}{" "}
+                    {totalItems === 1 ? "item" : "itens"} no carrinho
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      closeCart();
+                      router.push("/checkout");
+                    }}
+                    className="btn flex h-11 items-center justify-center gap-2 rounded-lg bg-green2 hover:bg-green3 hover:text-black"
+                  >
+                    Comprar <Icon name="cart" size={18} />
+                  </button>
+                </div>
+              </>
+            )}
           </div>
-        </>
-      )}
+        </div>
+      </div>
     </div>
   );
 }
@@ -96,46 +127,48 @@ function CartRow({
   onRemove: () => void;
 }) {
   return (
-    <li className="glow-green grid w-[95%] max-w-[1000px] grid-cols-[auto_1fr] gap-gutter p-gutter text-white1">
+    <li className="grid grid-cols-[auto_1fr] gap-3 border-t border-black2 py-4 text-white1 first:border-t-0 first:pt-0 sm:gap-4">
       <Image
         src={item.img}
         alt={item.name}
         width={100}
         height={100}
-        className="h-20 w-20 self-center object-contain sm:h-[100px] sm:w-[100px]"
+        className="h-16 w-16 self-center object-contain sm:h-[100px] sm:w-[100px]"
       />
-      <div className="flex min-w-0 flex-col gap-gutter">
+      <div className="flex min-w-0 flex-col gap-2 sm:gap-3">
         <h3 className="text-[15px] font-bold leading-tight sm:text-[16px]">
           {item.name}
         </h3>
-        <div className="flex flex-wrap items-center gap-gutter">
-          <span className="text-[25px] font-bold text-green1">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <span className="text-[20px] font-bold text-green1 sm:text-[25px]">
             {formatPrice(item.price)}
           </span>
-          <button
-            type="button"
-            onClick={onMinus}
-            aria-label="Diminuir quantidade"
-            className="cursor-pointer text-green1"
-          >
-            <Icon name="chevronLeft" size={18} />
-          </button>
-          <span className="min-w-4 text-center text-base font-semibold">
-            {item.qty}
-          </span>
-          <button
-            type="button"
-            onClick={onPlus}
-            aria-label="Aumentar quantidade"
-            className="cursor-pointer text-green1"
-          >
-            <Icon name="chevronRight" size={18} />
-          </button>
+          <div className="flex flex-none items-center gap-1">
+            <button
+              type="button"
+              onClick={onMinus}
+              aria-label="Diminuir quantidade"
+              className="cursor-pointer text-green1"
+            >
+              <Icon name="chevronLeft" size={18} />
+            </button>
+            <span className="min-w-4 text-center text-base font-semibold">
+              {item.qty}
+            </span>
+            <button
+              type="button"
+              onClick={onPlus}
+              aria-label="Aumentar quantidade"
+              className="cursor-pointer text-green1"
+            >
+              <Icon name="chevronRight" size={18} />
+            </button>
+          </div>
           <button
             type="button"
             onClick={onRemove}
             aria-label="Remover item"
-            className="btn ml-auto bg-green2 px-[12px] py-[7px] hover:bg-red1"
+            className="btn ml-auto rounded-lg bg-green2 px-3 py-[7px] hover:bg-red1"
           >
             <Icon name="trash" size={16} className="inline" />
           </button>

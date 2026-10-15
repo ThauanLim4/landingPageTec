@@ -7,16 +7,18 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer id="footer" className="flex min-h-[30vh] flex-col items-center justify-center">
+    <footer id="footer" className="flex flex-col items-center justify-center">
+      {/* o svg tem ~40% da altura como área transparente (rotate(180deg) interno):
+          recorta mantendo a silhueta da onda e colando no conteúdo */}
       <Image
         src="/imgs/wave.svg"
         alt=""
         width={1920}
         height={200}
-        className="w-full"
+        className="aspect-[16/1] w-full object-cover object-top"
       />
 
-      <div className="flex w-full flex-col items-center justify-evenly gap-section p-section">
+      <div className="flex w-full flex-col items-center justify-evenly gap-section px-section pb-section">
         <div className="flex gap-section">
           {SOCIALS.map((social) => (
             <a
@@ -46,6 +48,10 @@ export default function Footer() {
             Contato
           </Link>
         </div>
+
+        <span className="text-[15px] text-white1">
+          Este site foi desenvolvido puramente com fins demonstrativos, caso você tenha interesse em ter um serviço semelhante ou dar uma cara nova para o seu site, entre em contato comigo através das redes sociais acima.
+        </span>
 
         <span className="text-[15px] text-white1">
           &copy; Thauan Lima {year}

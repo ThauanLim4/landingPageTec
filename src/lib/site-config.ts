@@ -21,8 +21,7 @@ export const NAV_LINKS: NavLink[] = [
 
 // Redes sociais exibidas no Hero e no Footer.
 export const SOCIALS: SocialLink[] = [
-  { href: "https://www.instagram.com/thaau_lisouza/", label: "Instagram", icon: "instagram" },
-  { href: "https://wa.me/5583998093699", label: "WhatsApp", icon: "whatsapp" },
+  { href: "https://www.instagram.com/thax.dev/", label: "Instagram", icon: "instagram" },
   { href: "https://www.linkedin.com/in/thauan-lima-120bb6311/", label: "LinkedIn", icon: "linkedin" },
   { href: "https://github.com/ThauanLim4", label: "GitHub", icon: "github" },
 ];
